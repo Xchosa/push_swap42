@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_backdb.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 17:20:34 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/05 17:37:16 by poverbec         ###   ########.fr       */
+/*   Created: 2024/11/26 12:30:53 by poverbec          #+#    #+#             */
+/*   Updated: 2024/12/02 12:18:50 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "./libft.h"
 
-void	ft_lstadd_backdb(t_llist **lst, t_llist *new)
+/*
+Counts the number of nodes in a list.
+*/
+int	ft_lstsize(t_list *lst)
 {
-	t_llist	*last_node;
+	int	counter;
 
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
+	counter = 0;
+	while (lst != NULL)
 	{
-		*lst = new;
-		new->next = new;
-		new->prev = new;
-		return ;
+		counter++;
+		lst = lst->next;
 	}
-	else
-	{
-		last_node = ft_lstlastdb(*lst);
-		last_node->next = new;
-		new->prev = last_node;
-		new->next = *lst;
-		(*lst)->prev = new;
-	}
+	return (counter);
 }
