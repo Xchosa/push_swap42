@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:23:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:43:27 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:28:37 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ to the node to be added to the list.
 */
 
 void	lstadd_front_doubly(t_stack **lst, t_stack *new)
-{
-	t_stack *last_node;
-	
+{	
 	if(new == NULL)
 		return;
 	if(*lst == NULL)

@@ -47,36 +47,27 @@ MY_SOURCES_B = ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			*ft_lstmap.c \
+			ft_lstmap.c \
 
-MY_SOURCES_PF = \
-			ft_printf_func.c \
-			ft_printf_func2.c \
-			ft_printf.c \
+MY_SOURCES_PF = printf/ft_printf_func.c \
+			printf/ft_printf_func2.c \
+			printf/ft_printf.c \
 
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 MY_OBJECTS_B = $(MY_SOURCES_B:.c=.o)
 MY_OBJECTS_PF = $(MY_SOURCES_PF:.c=.o)
 
-# %.o: %.c
-# 	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(MY_OBJECTS)
-	$(AR) -rcs $(NAME) $(MY_OBJECTS) 
-
-bonus: $(NAME) $(MY_OBJECTS_B)
-	$(AR) rcs $(NAME) $(MY_OBJECTS_B) 
-
-printf: $(NAME) $(MY_OBJECTS_PF)
-	$(AR) rcs $(NAME) $(MY_OBJECTS_PF) 
+$(NAME): $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
+	$(AR) -rcs $(NAME) $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
 
 clean: 
-	rm -f $(MY_OBJECTS)
-	rm -f $(MY_OBJECTS_B)
-	rm -f $(MY_OBJECTS_PF)
+	rm -f $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
 
 fclean: clean 
 	rm -f $(NAME)

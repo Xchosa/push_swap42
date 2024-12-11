@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:19:13 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:36:21 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:21:23 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ lst: The address of a pointer to a node.
 del: The address of the function used to delete the content of the node.
 */
 
-void	ft_llstclear(t_stack **lst, void (*del)(void *))
+void	lstclear_doubly(t_stack **lst, void (*del)(void *))
 {
 	t_stack	*tmp;
 	t_stack *start;

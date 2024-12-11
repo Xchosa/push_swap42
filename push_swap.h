@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:28:47 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 14:23:22 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "libft/libft.h"
+# include "libft/printf/ft_printf.h"
 # include <limits.h>
 # include <stdbool.h>
 
@@ -27,13 +28,14 @@ typedef struct s_stack
 	struct s_stack 	*prev;
 }	t_stack;
 
-void	ft_llstadd_back(t_stack **lst, t_stack *new);
-void	ft_llstadd_front(t_stack **lst, t_stack *new);
-void	ft_llstiter(t_stack *lst, void (*f)(void *));
-t_stack	*ft_llstlast(t_stack *lst);
-t_stack	*ft_llstnew(int nbr);
+void	lstadd_back_doubly(t_stack **lst, t_stack *new);
+void	lstadd_front_doubly(t_stack **lst, t_stack *new);
+void	lstiter_doubly(t_stack *lst, void (*f)(int nbr));
+void	lstclear_doubly(t_stack **lst, void (*del)(void *));
+t_stack	lstlast_doulby(t_stack *lst);
+t_stack	*lstnew_doubly(int nbr);
 
-
+void	ft_sa(t_stack **a);
 
 
 #endif

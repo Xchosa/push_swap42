@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/05 16:03:58 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:27:10 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,27 @@
 // }					t_stack_list;
 
 
-void swap(t_stack_node **head)
+void swap(t_stack **head)
 {
-	t_node *first;
-	t_node *second;
+	t_stack *first;
+	t_stack *second;
 
 	
 }
 
-void ft_sa(t_stack_node **a)
+void ft_sa(t_stack **a)
 {
 	swap(a);
 	write(1, "sa\n", 3);
 }
 
-void ft_sb(t_stack_node **b)
+void ft_sb(t_stack **b)
 {
 	swap(b);
 	write(1, "sb\n", 3);
 }
 
-void ft_ss(t_stack_node **a, t_stack_node **b)
+void ft_ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:31:57 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:28:50 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,27 @@ int main(int argc, char **argv)
 	int i;
 	i = 1;
 	t_stack *node;
+	
 	while(i < argc )
 	{
-		node = lstnew_doubly(ft_atoi(argv[i]));//schreib eine neue node mit einer zahl (*nbr)
+		node = lstnew_doubly(ft_atoi(argv[i]));
 		if(!node)
 			return(lstclear_doubly(&a, del), 1);
-		lstadd_back_doubly(&a,node);//schreibt hinten rein immer eine neue node , 
-		// mit einer neuen zahl in den struct, (struct is 28 bit big)
+		lstadd_back_doubly(&a,node);
 		i++;
 	}
+	// lstiter_doubly(a, print_content(a->nbr));
+	lstiter_doubly(a,ft_sa);
 	lstiter_doubly(a, print_content);
-
-//if max argc < 100 
-	lstclear_doubly(&a, del);
-	return(0);
+	if max argc < 100 
+	//lstclear_doubly(&a, del);
+	
+	// while(a)
+	// {
+	// 	ft_printf("%d\n", a->nbr);
+	// 	a = a->next;
+	// }
+	// return(0);
 }
 
 // 2 8 7 9 1 3 12

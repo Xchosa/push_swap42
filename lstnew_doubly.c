@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:41:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:36:52 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:39:39 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ the value of the parameter
 ’content’. The variable ’next’ is initialized to NULL.
 */
 
-t_stack	*ft_llstnew(int nbr)
+t_stack	*lstnew_doubly(int nbr)
 {
 	t_stack	*node;
 

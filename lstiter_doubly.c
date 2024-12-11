@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:30:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:36:29 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 12:22:34 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Iterates the list ’lst’ and applies the function ’f’ on the content of each node.
 */
-void	ft_llstiter(t_stack *lst, void (*f)(void *))
+void	lstiter_doubly(t_stack *lst, void (*f)(int nbr))
 {
 	t_stack *head;
 	
@@ -25,7 +25,7 @@ void	ft_llstiter(t_stack *lst, void (*f)(void *))
 	while (lst != NULL)
 	{
 		// f(lst->nbr);
-		f(lst->content);
+		f(lst->nbr);
 		lst = lst->next;
 		if (lst == head)
 			break;

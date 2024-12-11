@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llstadd_back.c                                  :+:      :+:    :+:   */
+/*   lstadd_back_doubly.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:34 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/09 17:29:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 10:27:37 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	lstadd_back_doubly(t_stack **lst, t_stack *new)
 	else
 	{
 		last_node = (*lst)->prev;
-		
 		last_node->next = new;
 		new->prev = last_node;
 		new->next = *lst;
