@@ -6,20 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/11 13:28:50 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:30:06 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
-
-void print_content(int nbr)
-{
-	ft_printf("%d\n", nbr);
-}
-void del(void *content)
-{
-	free(content);
-}
 
 int main(int argc, char **argv)
 {
@@ -32,24 +23,33 @@ int main(int argc, char **argv)
 		return (0);
 	// else if (argc == 2)
 	// 	argv = split(argv[1], ' ') jedes argument ist eine zahl ()
-	
+
 	int i;
 	i = 1;
 	t_stack *node;
+	int max_arguments;
 	
 	while(i < argc )
 	{
 		node = lstnew_doubly(ft_atoi(argv[i]));
 		if(!node)
 			return(lstclear_doubly(&a, del), 1);
+		if(argc == 3)
+			return(ft_swap_2nbr(&a),0);
 		lstadd_back_doubly(&a,node);
 		i++;
 	}
-	// lstiter_doubly(a, print_content(a->nbr));
-	lstiter_doubly(a,ft_sa);
 	lstiter_doubly(a, print_content);
-	if max argc < 100 
-	//lstclear_doubly(&a, del);
+	max_arguments = lstsize_doubly(a);
+	
+	ft_sa(&a);
+	lstiter_doubly(a, print_content);
+	if (max_arguments < 8)
+	{
+		ft_printf("Max Argc: %d\n", max_arguments);
+		lstiter_doubly(a, print_content);
+	}
+	
 	
 	// while(a)
 	// {
@@ -74,3 +74,6 @@ int main(int argc, char **argv)
 // 	testen 
 // 	sortiertfunctionen implementieren (das sa ss, pa functioniert. )
 // 	dann sort algo anwenden. 
+
+
+// make, make fclean

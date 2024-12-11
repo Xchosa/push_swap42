@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_utilis.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/11 13:27:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:55:31 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,84 @@
 // 	struct s_list	*prev;
 // }					t_stack_list;
 
+void del( void *content)
+{
+	free(content);
+}
 
-void swap(t_stack **head)
+void print_content(int nbr)
+{
+	ft_printf("%d\n", nbr);
+}
+// void check_sorted(int nbr)
+// {
+	
+// }
+
+void ft_swap_2nbr(t_stack**a)
+{
+	if(((*a)-> next ) > (*a))
+	{
+		ft_swap(a);
+		write(1, "sa\n", 3);
+	}
+	else
+		lstiter_doubly(*a, print_content);
+	lstclear_doubly(a, del);
+}
+
+void ft_swap(t_stack **a)
 {
 	t_stack *first;
 	t_stack *second;
-
+	t_stack *third;
+	t_stack	*last;
 	
+	first	= *a;
+	second	= (*a)->next;
+	third	= second->next;
+	last	= lstlast_doubly(*a);
+	
+	second->prev = first->prev;
+	second->next = first;
+	first->prev = second;
+	first->next = third;
+	
+	if(third != NULL)
+		third->prev = first;
+	if(last != NULL)
+		last->next = second;
+	
+	// if (second->prev != NULL)
+    // second->prev->next = second;
+	// else
+    // last->next = second;
+	
+	*a	= second;
 }
-
+// sa (swap a): Swap the first 2 elements at the top of stack a. 
+// Do nothing if there is only one or no elements.
 void ft_sa(t_stack **a)
 {
-	swap(a);
+	// t_stack *second;
+	// t_stack *first ;
+	// first = *a;
+	// second = (*a)->next;
+	// *a = second;
+	// (*a)->next = first;
+	ft_swap(a);
 	write(1, "sa\n", 3);
 }
 
 void ft_sb(t_stack **b)
 {
-	swap(b);
+	ft_swap(b);
 	write(1, "sb\n", 3);
 }
 
-void ft_ss(t_stack **a, t_stack **b)
-{
-	swap(a);
-	swap(b);
-	write(1, "ss\n", 3);
-}
+// void ft_ss(t_stack **a, t_stack **b)
+// {
+// 	ft_swap(a);
+// 	ft_swap(b);
+// 	write(1, "ss\n", 3);
+// }

@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2024/12/11 13:27:45 by poverbec         ###   ########.fr        #
+#    Updated: 2024/12/11 14:44:52 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ MY_SOURCES = \
 			lstiter_doubly.c \
 			lstlast_doubly.c \
 			lstnew_doubly.c \
+			lstsize_doubly.c \
 			push_swap.c \
-			push_swap_utilis.c 
+			push_swap_utilis.c \
 			
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
