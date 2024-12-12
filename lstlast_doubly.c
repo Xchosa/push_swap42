@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:39:51 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/11 11:56:16 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/12 11:17:30 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 returns the last node of the list.
 */
-t_stack	*ft_lstlastdoubly(t_stack *lst)
+t_stack	*lstlast_doubly(t_stack *lst)
 {
 	t_stack *tmp;
 	// t_stack *prev;

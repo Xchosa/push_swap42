@@ -58,8 +58,8 @@ MY_OBJECTS = $(MY_SOURCES:.c=.o)
 MY_OBJECTS_B = $(MY_SOURCES_B:.c=.o)
 MY_OBJECTS_PF = $(MY_SOURCES_PF:.c=.o)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# %.o: %.c
+# 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
