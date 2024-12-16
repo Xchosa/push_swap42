@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 12:41:01 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:32:38 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void	ft_swap(t_stack **a);
 void	ft_sa(t_stack **a);
 void	ft_sb(t_stack **b);
 void	ft_ss(t_stack **a, t_stack **b);
+
+void	ft_push(t_stack **a, t_stack **b);
+void 	ft_pb(t_stack **a, t_stack **b);
+
 
 void	print_content(t_object *content);
 void	del(void *content);

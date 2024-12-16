@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2024/12/16 13:08:53 by poverbec         ###   ########.fr        #
+#    Updated: 2024/12/16 15:09:41 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ MY_SOURCES = \
 			push_swap.c \
 			init_object.c \
 			push_swap_utilis.c \
+			push_swap_utilis2.c \
 			handle_stack_ab.c \
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)

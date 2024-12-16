@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 13:29:08 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:30:34 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int main(int argc, char **argv)
 	
 	ft_sa(&a);
 	lstiter_doubly(a, print_content);
+	ft_pa(&a, &b);
+	lstiter_doubly(b, print_content);
 	if (max_arguments > 10)
 	{
 		ft_printf("Max Argc: %d\n", max_arguments);

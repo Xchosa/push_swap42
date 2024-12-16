@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 13:32:09 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 15:09:11 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void del( void *content)
 	free(content);
 }
 
-void print_content(t_object *content)
+void print_content(t_object *object)
 {
-	ft_printf("Index: %i, Nbr: %d, Index_sorted %d\n", content->index, content->nbr, content->index_sorted);
+	ft_printf("Index: %i, Nbr: %d, Index_sorted %d\n", object->index, object->nbr, object->index_sorted);
 }
 // void check_sorted(t_stack **a, int nbr)
 // {
@@ -144,10 +144,3 @@ void ft_sa(t_stack **a)
 // 	write(1, "ss\n", 3);
 // }
 
-// pb (push b): Take the first element at the top of 
-//a and put it at the top of b.
-void ft_pb(t_stack **a, t_stack **b)
-{
-	ft_push(a, b);
-	write(1, "pb\n", 3);
-}

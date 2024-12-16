@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:30:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 11:52:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:43:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	lstiter_doubly(t_stack *lst, void (*f)(t_object *))
 	head = lst;
 	while (lst != NULL)
 	{
-		// f(lst->nbr);
-		f(lst->content);
+		
+		// f(lst->content); wuerde auch func, comp ist intel
 		f((t_object *)(lst->content));
 		lst = lst->next;
 		if (lst == head)
