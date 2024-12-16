@@ -6,13 +6,15 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2024/12/12 15:58:54 by poverbec         ###   ########.fr        #
+#    Updated: 2024/12/16 13:08:53 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-I. -v
 LIBFT=libft/libft.a
+
+VPATH= 	src:src/doubly_list_func:src/sort
 
 MY_SOURCES = \
 			lstadd_back_doubly.c \
@@ -24,6 +26,7 @@ MY_SOURCES = \
 			lstnew_doubly.c \
 			lstsize_doubly.c \
 			push_swap.c \
+			init_object.c \
 			push_swap_utilis.c \
 			handle_stack_ab.c \
 

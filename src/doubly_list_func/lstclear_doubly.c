@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:19:13 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/11 11:21:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:49:17 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 /*
 Deletes and frees the given node and every 

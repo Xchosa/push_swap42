@@ -6,12 +6,12 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:36:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/12 16:16:31 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:49:38 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 /*
 Iterates the list ’lst’ and applies the function ’f’ 

@@ -6,16 +6,21 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/12 16:39:18 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:29:08 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "inc/push_swap.h"
+
+// void push functionen implementieren 
+// das die swap push functionen im handler functionieren
+// sortieren lassen, durchz'hlen in index_sorted und dann nach dem index_sorted sortieren
 
 int main(int argc, char **argv)
 {
 	t_stack *a;
 	t_stack *b;
+	t_object *object; 
 
 	a = NULL;
 	b = NULL;
@@ -23,12 +28,16 @@ int main(int argc, char **argv)
 		return (0);
 	int i;
 	i = 1;
+	
 	t_stack *node;
 	int max_arguments;
 	
 	while(i< argc )
 	{
-		node = lstnew_doubly(ft_atoi(argv[i]));
+		object = malloc (sizeof(t_object));
+		if(!object)
+			return (lstclear_doubly(&a, del), 1);
+		node = lstnew_doubly(init_object(object, i, ft_atoi(argv[i]), 0));// initailisere index_sorted mit 0
 		if(!node)
 			return(lstclear_doubly(&a, del), 1);
 		lstadd_back_doubly(&a,node);
@@ -62,3 +71,5 @@ int main(int argc, char **argv)
 
 
 // make, make fclean
+
+// void push functionen implementieren 

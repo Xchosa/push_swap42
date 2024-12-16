@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:41:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/11 11:39:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 12:18:41 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 /*
 allocates (with malloc(3)) and returns a new node. 
@@ -19,16 +19,37 @@ the value of the parameter
 ’content’. The variable ’next’ is initialized to NULL.
 */
 
-t_stack	*lstnew_doubly(int nbr)
+// t_stack	*lstnew_doubly(int nbr)
+// {
+// 	t_stack	*node;
+
+// 	node = malloc (sizeof(t_stack));
+// 	if (!node)
+// 		return (NULL);
+// 	node->nbr = nbr;
+// 	node->content = NULL;
+// 	node->next = NULL;
+// 	node->prev = NULL;
+// 	return (node);
+// }
+
+t_stack	*lstnew_doubly(t_object *object)
 {
 	t_stack	*node;
 
 	node = malloc (sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	node->nbr = nbr;
-	node->content = NULL;
+	// object = malloc(sizeof(t_object));
+	// if (!object)
+	// 	{
+	// 	free(node);
+	// 	return (NULL);
+	// 	}
+	node->content = (void *)object;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
 }
+
+// content erwartet einen void pointer 

@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:39:51 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/12 11:17:30 by poverbec         ###   ########.fr       */
+/*   Updated: 2024/12/16 11:49:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "../../inc/push_swap.h"
 
 /*
 returns the last node of the list.
