@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/09 14:42:49 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:26:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,18 @@ typedef struct s_stack
 }	t_stack;
 
 
+// parse_nbr
 int		start_parse(int argc, char **argv, t_stack**a);
+int		parse_input(char **data, t_stack **a);
 
-
+// list_push_swap
+void	lstadd_back_ps(t_stack **lst, t_stack *new);
+void	lstadd_front_ps(t_stack **lst, t_stack *new);
+void	lstiter_ps(t_stack *lst, void (*f)(t_stack *));
+void	lstclear_ps(t_stack **lst, void (*del)(void *));
+t_stack	*lstlast_ps(t_stack *lst);
+t_stack	*lstnew_ps(int content);
+int		lstsize_ps(t_stack *lst);
 
 void	ft_swap_2nbr(t_stack**a);
 void	ft_swap_only(t_stack **a);
@@ -48,9 +57,9 @@ void	ft_push(t_stack **a, t_stack **b);
 void 	ft_pb(t_stack **a, t_stack **b);
 
 
-void	print_content(t_object *content);
-void	del(void *content);
+void	print_content(t_stack *data);
+void	del(void *data);
 
 void	handle_stack_ab(t_stack **a,t_stack **b);
-void	add_index(int index);
+
 #endif

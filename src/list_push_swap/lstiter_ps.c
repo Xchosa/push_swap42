@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:30:42 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/09 15:10:55 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:55:47 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	lstiter_ps(t_stack *lst, void (*f)(t_stack *))
 	head = lst;
 	while (lst != NULL)
 	{
-		f((t_stack *)(lst->data));
+		// f((t_stack *)(lst->data));
+		f(lst);
 		lst = lst->next;
-		if (lst == NULL)
-			break;
+		// if (lst == head)
+		// 	break;
 	}
 	
 	return ;
 }
 
-// maybe 2 functu

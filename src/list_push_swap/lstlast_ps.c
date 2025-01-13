@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstlast_doubly.c                                   :+:      :+:    :+:   */
+/*   lstlast_ps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:39:51 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/09 14:52:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/13 15:40:31 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ t_stack	*lstlast_ps(t_stack *lst)
 	
 	if (lst == NULL)
 		return (NULL);
+	tmp = lst;
 	while (tmp->next != NULL)
 	{
-		tmp = tmp -> next;
+		tmp = tmp->next;
 	}
 	return (tmp);
 }

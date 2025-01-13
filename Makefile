@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/09 15:11:04 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/13 17:36:28 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,16 @@ LIBFT=libft/libft.a
 VPATH= 	src:src/list_push_swap:src/sort
 
 MY_SOURCES = \
-			lstadd_back_.c \
+			lstadd_back_ps.c \
 			lstadd_front_ps.c \
 			lstclear_ps.c \
 			lstiter_ps.c \
 			lstlast_ps.c \
 			lstnew_ps.c \
 			lstsize_ps.c \
-			push_swap.c \
-			init_object.c \
-			push_swap_utilis.c \
-			handle_stack_ab.c 
+			main.c \
+			parse_nbr.c \
+			push_swap_comands.c
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
 NAME = push_swap
@@ -52,7 +51,7 @@ clean:
 
 fclean: clean 
 	rm -f $(NAME)
-# make -C libft fclean
+	make -C libft fclean
 
 re: fclean all
 

@@ -4,6 +4,7 @@ AR = ar
 NAME = libft.a
 
 MY_SOURCES = ft_atoi.c	\
+			ft_atol.c \
 			ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
