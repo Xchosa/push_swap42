@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2024/12/16 15:09:41 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/09 15:11:04 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,22 +14,20 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror #-I. -v
 LIBFT=libft/libft.a
 
-VPATH= 	src:src/doubly_list_func:src/sort
+VPATH= 	src:src/list_push_swap:src/sort
 
 MY_SOURCES = \
-			lstadd_back_doubly.c \
-			lstadd_front_doubly.c \
-			lstclear_doubly.c \
-			lstiter_doubly.c \
-			lstiter_doubly_index.c \
-			lstlast_doubly.c \
-			lstnew_doubly.c \
-			lstsize_doubly.c \
+			lstadd_back_.c \
+			lstadd_front_ps.c \
+			lstclear_ps.c \
+			lstiter_ps.c \
+			lstlast_ps.c \
+			lstnew_ps.c \
+			lstsize_ps.c \
 			push_swap.c \
 			init_object.c \
 			push_swap_utilis.c \
-			push_swap_utilis2.c \
-			handle_stack_ab.c \
+			handle_stack_ab.c 
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
 NAME = push_swap

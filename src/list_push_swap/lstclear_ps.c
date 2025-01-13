@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstclear_doubly.c                                  :+:      :+:    :+:   */
+/*   lstclear_ps.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:19:13 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 11:49:17 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:06:20 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,17 @@ lst: The address of a pointer to a node.
 del: The address of the function used to delete the content of the node.
 */
 
-void	lstclear_doubly(t_stack **lst, void (*del)(void *))
+void	lstclear_ps(t_stack **lst)
 {
 	t_stack	*tmp;
-	t_stack *start;
 	
-	if(lst == NULL)
+	if(*lst == NULL)
 		return;
-	start = *lst;
-
 	while (*lst != NULL)
 	{
 		tmp = (*lst)-> next;
-		del((*lst)->content);
-		//del((*lst)->nbr); not dynm alloc , content can point dynamc to alloc memorry
 		free(*lst);
 		*lst = tmp;
-		if(*lst  == start)
-			break;
 	}
 	*lst = NULL;
 }

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstsize_doubly.c                                   :+:      :+:    :+:   */
+/*   lstadd_back_doubly.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 14:28:00 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 11:50:01 by poverbec         ###   ########.fr       */
+/*   Created: 2024/12/05 17:20:34 by poverbec          #+#    #+#             */
+/*   Updated: 2025/01/09 14:55:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
 /*
-Counts the number of nodes in a list.
+Adds the node ’new’ at the end of the list.
 */
-int	lstsize_doubly(t_stack *lst)
+
+void	lstadd_back_ps(t_stack **lst, t_stack *new)
 {
-	int	counter;
-	t_stack *head;
-	head = lst;
-	
-	counter = 0;
-	while (lst != NULL)
+	t_stack	*last_node;
+
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
-		counter++;
-		lst = lst->next;
-		if(lst == head)
-			break;
+		*lst = new;
+		return ;
 	}
-	return (counter);
+	else
+	{
+		last_node = lstlast_ps(*lst);
+		last_node -> next = new;
+	}
 }

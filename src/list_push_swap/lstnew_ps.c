@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:41:12 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 12:18:41 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:36:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,16 @@ the value of the parameter
 // 	return (node);
 // }
 
-t_stack	*lstnew_doubly(t_object *object)
+t_stack	*lstnew_ps(int content)
 {
 	t_stack	*node;
 
 	node = malloc (sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	// object = malloc(sizeof(t_object));
-	// if (!object)
-	// 	{
-	// 	free(node);
-	// 	return (NULL);
-	// 	}
-	node->content = (void *)object;
-	node->next = NULL;
-	node->prev = NULL;
+	node -> data = content;
+	node -> next = NULL;
+	
 	return (node);
 }
 

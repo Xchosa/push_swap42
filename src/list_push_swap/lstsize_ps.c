@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstiter_doubly.c                                   :+:      :+:    :+:   */
+/*   lstsize_doubly.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 17:30:42 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 13:43:33 by poverbec         ###   ########.fr       */
+/*   Created: 2024/12/11 14:28:00 by poverbec          #+#    #+#             */
+/*   Updated: 2025/01/09 14:50:08 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
 /*
-Iterates the list ’lst’ and applies the function ’f’ on the content of each node.
+Counts the number of nodes in a list.
 */
-void	lstiter_doubly(t_stack *lst, void (*f)(t_object *))
+int	lstsize_ps(t_stack *lst)
 {
-	t_stack *head;
+	int	counter;
 	
-	if(lst == NULL)
-		return;
-	head = lst;
+	counter = 0;
 	while (lst != NULL)
 	{
-		
-		// f(lst->content); wuerde auch func, comp ist intel
-		f((t_object *)(lst->content));
+		counter++;
 		lst = lst->next;
-		if (lst == head)
-			break;
 	}
-	
-	return ;
+	return (counter);
 }
-
-// maybe 2 functu

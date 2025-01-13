@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstadd_back_doubly.c                               :+:      :+:    :+:   */
+/*   lstadd_front_doubly.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 17:20:34 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 11:47:33 by poverbec         ###   ########.fr       */
+/*   Created: 2024/12/09 10:23:12 by poverbec          #+#    #+#             */
+/*   Updated: 2025/01/09 14:57:38 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
 /*
-Adds the node ’new’ at the end of the list.
+lst: The address of a pointer 
+to the first link of a list.
+new: The address of a pointer 
+to the node to be added to the list.
 */
 
-void	lstadd_back_doubly(t_stack **lst, t_stack *new)
-{
-	t_stack	*last_node;
-
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
+void	lstadd_front_ps(t_stack **lst, t_stack *new)
+{	
+	if (new != NULL)
 	{
-		*lst = new;
-		(*lst)->next = new;
-		(*lst)->prev = new;
-		// new->next = new;
-		// new->prev = new;
-		return ;
-	}
-	else
-	{
-		last_node = (*lst)->prev;
-		last_node->next = new;
-		new->prev = last_node;
 		new->next = *lst;
-		(*lst)->prev = new;
+		*lst = new;
 	}
 }

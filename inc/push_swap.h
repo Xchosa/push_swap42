@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2024/12/16 15:32:38 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:42:49 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,18 @@
 
 typedef struct s_stack
 {
-	void 	*content;
-	// int		nbr;
-	// int		index;
+	int			data;
+	int			index;
+	int			push_cost;
+	int			above_median;
+	char		name;
+	struct s_stack	*target;
 	struct s_stack	*next;
-	struct s_stack 	*prev;
 }	t_stack;
 
-typedef	struct s_object
-{
-	int index;
-	int nbr;
-	int index_sorted;
-	
-} t_object;
 
-t_object	*init_object(t_object *object, int index, int nbr, int index_sorted);
+int		start_parse(int argc, char **argv, t_stack**a);
 
-void	lstadd_back_doubly(t_stack **lst, t_stack *new);
-void	lstadd_front_doubly(t_stack **lst, t_stack *new);
-void	lstiter_doubly(t_stack *lst, void (*f)(t_object *));
-void	lstiter_doubly_index(t_stack *lst, void (*f)(int index));
-void	lstclear_doubly(t_stack **lst, void (*del)(void *));
-t_stack	*lstlast_doubly(t_stack *lst);
-t_stack	*lstnew_doubly(t_object *object);
-int		lstsize_doubly(t_stack *lst);
 
 
 void	ft_swap_2nbr(t_stack**a);
