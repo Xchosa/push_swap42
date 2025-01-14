@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/13 17:37:12 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:34:37 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,57 @@
 // check edge cases (int digit, dublicates, empty.  )
 // create lst with numbers
 
-
-int parse_input(char **data, t_stack **a)
+// make long to int
+// change headder file back to int (from long)
+int parse_data(char **data, t_stack **a)
 {
-	ssize_t nbr;
-	t_stack *stack_lst;
+	long	 	nbr;
+	t_stack 	*stack_lst;
+	
 	
 	while(*data != NULL)
 	{
-		if(ft_atol(*data) != LONG_MIN)
+		if(ft_strlen(*data) > 11)
 		{
-			ft_printf("no digit");
+			ft_printf("42: %d", nbr);
 			return(EXIT_FAILURE);
 		}
-		if(ft_strlen(*data)< 11)
-			nbr = ft_atoi(*data);
-		else
-			return(EXIT_FAILURE);
+		nbr = ft_atol(*data);
+		// ft_printf("43: %ld", nbr);
+		
 		if(nbr < INT_MIN || nbr > INT_MAX)
+		{
 			return(EXIT_FAILURE);
+			ft_printf("INT_MIN: %d", nbr);
+		}
 		// check for dublicates 42 and 42
 		stack_lst = lstnew_ps(nbr);
 		if(!stack_lst)
+		{
 			return(EXIT_FAILURE);
+			ft_printf("failed stack: %d", nbr);
+		}
+		if(*a == NULL)
+			*a = stack_lst;
 		else
 			lstadd_back_ps(a, stack_lst);
 		data++;
 	}
 	return(EXIT_SUCCESS);
 }
+		
 
 
 int start_parse(int argc, char **argv, t_stack **a )
 {
 	int 	parse_result;
+	
 	// case for argc == 2
+	
 	if(argc >2)
 	{
-		parse_result = parse_input(argv + 1, a);
+		argv++;
+		parse_result = parse_data(argv, a);
 		return(parse_result);
 	}
 	return (EXIT_FAILURE);
@@ -70,7 +83,7 @@ void del( void *data)
 
 void print_content(t_stack *data)
 {
-	ft_printf("data: %i\n", data);
+	ft_printf("data: %d\n", data);
 }
 // ft_printf("data: %i, Nbr: %d, Index_sorted %d\n", object->index, object->nbr, object->index_sorted);
 

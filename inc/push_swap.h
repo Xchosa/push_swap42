@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/13 16:26:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:32:34 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_stack
 {
-	int			data;
+	long		data;
 	int			index;
 	int			push_cost;
 	int			above_median;

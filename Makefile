@@ -6,13 +6,14 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/13 17:36:28 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/14 11:45:16 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror #-I. -v
-LIBFT=libft/libft.a
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+LIBFT	= libft/libft.a
+NAME = push_swap
 
 VPATH= 	src:src/list_push_swap:src/sort
 
@@ -29,16 +30,32 @@ MY_SOURCES = \
 			push_swap_comands.c
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
-NAME = push_swap
+
+# ---------- COLORS AND STUFF ---------- #
+Color_Off = \033[0m
+BIYellow = \033[1;93m
+Yellow = \033[0;33m
+BGreen = \033[1;32m 
+On_Yellow = \033[43m
+On_Green = \033[42m
+Red = \033[0;31m
 
 all: $(LIBFT) $(NAME)
 
-$(NAME): $(MY_OBJECTS) 
-	$(CC) $(CFLAGS) $(MY_OBJECTS) $(LIBFT) -o $(NAME)
+$(NAME): $(MY_OBJECTS)
+	@echo "$(BIYellow) Compiling $(NAME) $(Color_Off)"
+	@$(CC) $(CFLAGS) $(MY_OBJECTS) $(LIBFT) -o $(NAME)
+	@if [ -f $(NAME) ]; then \
+		echo "$(On_Yellow)------------------------------------------$(Color_Off)"; \
+		echo "$(BGreen)ROCESS COMPLETED SUCCESSFULLY!$(Color_Off)"; \
+		echo "$(On_Green)--------------------------------------$(Color_Off)"; \
+	else \
+		echo "$(Red)failed to compile $(NAME) $(Color_Off)"; \
+		exit 1; \
+	fi
 # cc   -Wall -Wextra -Werror ….o libft/libft.a -o push_swap
 #$(CC) -rcs $(NAME) $(MY_OBJECTS) 
 # ar -rcs $(NAME) $(MY_OBJECTS)
-
 
 $(LIBFT):
 	make -C libft
@@ -46,11 +63,13 @@ $(LIBFT):
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean: 
-	rm -f $(MY_OBJECTS)
+clean:
+	@echo "$(Yellow)-----Removing Object Files--------$(Color_Off)"
+	@rm -f $(MY_OBJECTS)
 
-fclean: clean 
-	rm -f $(NAME)
+fclean: clean
+	@echo "$(On_Yellow)Removing Executables...$(Color_Off)"
+	@rm -f $(NAME)
 	make -C libft fclean
 
 re: fclean all
