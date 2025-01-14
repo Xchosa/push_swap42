@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 14:26:42 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:08:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_stack
 // parse_nbr
 int		start_parse(int argc, char **argv, t_stack**a);
 int		parse_input(char **data, t_stack **a);
+
+// sorting
+void	sort(t_stack **a, t_stack **b);
+bool	check_order(t_stack *a);
+
 
 // list_push_swap
 void	lstadd_back_ps(t_stack **lst, t_stack *new);

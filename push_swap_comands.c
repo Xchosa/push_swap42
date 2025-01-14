@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/13 16:22:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:44:45 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,15 @@
 
 // turk sort ab bestimmter groeser, davor anderer sort
 // am besten combinieren. 
+
+void ft_push(t_stack **a, t_stack **b)
+{
+	t_stack *tmp;
+	if(*a == NULL)
+		return;
+	else
+		tmp = *a;
+		*a = (*a)->next;
+		lstadd_front_ps(b, tmp);
+		ft_printf("pb\n");
+}

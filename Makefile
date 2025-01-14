@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/14 14:00:20 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/14 15:58:06 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ MY_SOURCES = \
 			lstsize_ps.c \
 			main.c \
 			parse_nbr.c \
+			sorting.c \
 			push_swap_comands.c
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)

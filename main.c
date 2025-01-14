@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 14:01:01 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:46:35 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,18 @@ int main(int argc, char **argv)
 	if(argc < 2)
 		return (EXIT_SUCCESS);
 	parse_result = start_parse(argc, argv, &a);
+	if(parse_result == EXIT_FAILURE)
+	{
+		// lstiter_ps(a, del);
+		return(EXIT_FAILURE);
+	}
 	// if(argc == 3)
 	// 		return(ft_swap_2nbr(&a),0);
 	
 	lstiter_ps(a, print_content);
-	
-	
+	sort(&a, &b);
+	lstiter_ps(a, print_content);
+	lstiter_ps(b, print_content);
 	// ft_sa(&a);
 	
 }

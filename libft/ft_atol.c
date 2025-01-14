@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:16:33 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 15:00:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:01:22 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ long	ft_atol(char *str)
 	}
 	if (valid == 0 || str[i] != '\0')
 		return (LONG_MIN);
-	printf("real number: %ld\n", number * isneg);
 	return (number * isneg);
 }

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 14:59:24 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/14 16:02:07 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 // make long to int
 // change headder file back to int (from long)
+
 int parse_data(char *data, t_stack **a)
 {
 	long	 	nbr;
@@ -31,22 +32,12 @@ int parse_data(char *data, t_stack **a)
 
 	i = 0;	
 	split_nbr = ft_split(data, ' ');
-	int j = 0;
-	while (split_nbr[j])
-	{
-		printf("nu = %s\n", split_nbr[j++]);
-	}
 	
 	while(split_nbr[i] != NULL)
 	{
-		// if(ft_strlen(*data) > 11)
-		// {
-		// 	ft_printf("42: %d", nbr);
-		// 	return(EXIT_FAILURE);
-		// }
-		printf("test vor atol\n");
+		printf("test vor atol %s \n", split_nbr[i]);
 		nbr = ft_atol(split_nbr[i++]);
-		ft_printf("43: %d\n", nbr);
+		ft_printf("line 49: %d\n", nbr);
 		if(nbr < INT_MIN || nbr > INT_MAX)
 		{
 			ft_printf("INT_MIN: %d", nbr);
@@ -78,17 +69,17 @@ int start_parse(int argc, char **argv, t_stack **a )
 	if(argc > 1 )
 	{
 		parse_result = parse_data(*(argv + 1), a);
-		ft_printf("73 %d\n", parse_result); // Debug print
 		return(parse_result);
 	}
 	return (EXIT_FAILURE);
 }
 
 
-void del( void *data)
-{
-	free(data);
-}
+// void del( t_stack *data)
+// {
+// 	ft_printf("data");
+// 	free(data->data);
+// }
 
 void print_content(t_stack *data)
 {
