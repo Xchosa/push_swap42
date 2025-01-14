@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/14 11:45:16 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/14 14:00:20 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,8 @@ $(NAME): $(MY_OBJECTS)
 	@$(CC) $(CFLAGS) $(MY_OBJECTS) $(LIBFT) -o $(NAME)
 	@if [ -f $(NAME) ]; then \
 		echo "$(On_Yellow)------------------------------------------$(Color_Off)"; \
-		echo "$(BGreen)ROCESS COMPLETED SUCCESSFULLY!$(Color_Off)"; \
-		echo "$(On_Green)--------------------------------------$(Color_Off)"; \
+		echo "$(BGreen)PROCESS COMPLETED SUCCESSFULLY!$(Color_Off)"; \
+		echo "$(On_Green)------------------------------------------$(Color_Off)"; \
 	else \
 		echo "$(Red)failed to compile $(NAME) $(Color_Off)"; \
 		exit 1; \
