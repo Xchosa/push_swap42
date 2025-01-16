@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 16:02:07 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:27:41 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ int parse_data(char *data, t_stack **a)
 	
 	while(split_nbr[i] != NULL)
 	{
-		printf("test vor atol %s \n", split_nbr[i]);
-		nbr = ft_atol(split_nbr[i++]);
-		ft_printf("line 49: %d\n", nbr);
+		nbr = ft_atol(split_nbr[i]);
 		if(nbr < INT_MIN || nbr > INT_MAX)
 		{
 			ft_printf("INT_MIN: %d", nbr);
@@ -54,6 +52,7 @@ int parse_data(char *data, t_stack **a)
 			*a = stack_lst;
 		else
 			lstadd_back_ps(a, stack_lst);
+		i++;
 	}
 	return(EXIT_SUCCESS);
 }
@@ -71,6 +70,39 @@ int start_parse(int argc, char **argv, t_stack **a )
 		parse_result = parse_data(*(argv + 1), a);
 		return(parse_result);
 	}
+	if (argc > 2)
+	{
+		int i;
+		i = 1;
+		int nbr;
+		t_stack *stack_lst;
+		while (i < argc)
+		{
+			parse_result = parse_data(*(argv + i), a);
+			
+			nbr = ft_atol(argv[i]);
+			
+			if(nbr < INT_MIN || nbr > INT_MAX)
+			{
+			ft_printf("INT_MIN: %d", nbr);
+			return(EXIT_FAILURE);
+			}
+			stack_lst = lstnew_ps(nbr);
+			if(!stack_lst)
+			{
+				ft_printf("failed stack: %d", nbr);
+				return(EXIT_FAILURE);
+			}
+				if(*a == NULL)
+				*a = stack_lst;
+			else
+				lstadd_back_ps(a, stack_lst);
+			i++;
+		}
+		//wenn alle nodes erstellt sind 
+		// check for dublicates 42 and 42 // nr 1 schaut auf alle danach, pos 4 schaut nicht mehr pos 3 an // 
+		return(parse_result);
+	}
 	return (EXIT_FAILURE);
 }
 
@@ -80,10 +112,20 @@ int start_parse(int argc, char **argv, t_stack **a )
 // 	ft_printf("data");
 // 	free(data->data);
 // }
+// wenn fail alle nodes freen. 
+
 
 void print_content(t_stack *data)
 {
-	ft_printf("data: %d\n", data->data);
+	ft_printf("data: %d | index:  %d\n", data->data, data->index);
+}
+
+void put_index(t_stack **a)
+{
+	while()
+	// einen Loop kleinste 
+	// bubbelsort 
+	
 }
 // ft_printf("data: %i, Nbr: %d, Index_sorted %d\n", object->index, object->nbr, object->index_sorted);
 

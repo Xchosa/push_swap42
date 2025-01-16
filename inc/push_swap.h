@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 16:08:15 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:29:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 	int			index;
 	int			push_cost;
 	int			above_median;
-	char		name;
 	struct s_stack	*target;
 	struct s_stack	*next;
 }	t_stack;
@@ -37,8 +36,8 @@ int		start_parse(int argc, char **argv, t_stack**a);
 int		parse_input(char **data, t_stack **a);
 
 // sorting
-void	sort(t_stack **a, t_stack **b);
-bool	check_order(t_stack *a);
+// void	sort(t_stack **a, t_stack **b);
+// bool	check_order(t_stack *a);
 
 
 // list_push_swap
@@ -50,21 +49,26 @@ t_stack	*lstlast_ps(t_stack *lst);
 t_stack	*lstnew_ps(int content);
 int		lstsize_ps(t_stack *lst);
 
-void	ft_swap_2nbr(t_stack**a);
-void	ft_swap_only(t_stack **a);
+// void	ft_swap_2nbr(t_stack**a);
+// void	ft_swap_only(t_stack **a);
 
-void	ft_swap(t_stack **a);
-void	ft_sa(t_stack **a);
-void	ft_sb(t_stack **b);
-void	ft_ss(t_stack **a, t_stack **b);
+// void	ft_swap(t_stack **a);
+// void	ft_sa(t_stack **a);
+// void	ft_sb(t_stack **b);
+// void	ft_ss(t_stack **a, t_stack **b);
 
-void	ft_push(t_stack **a, t_stack **b);
-void 	ft_pb(t_stack **a, t_stack **b);
+void	ft_push_b(t_stack **b, t_stack **a);
+void	ft_push_a(t_stack **a, t_stack **b);
+void	ft_rotate_ra (t_stack **a);
+
+void	put_index(t_stack **a)
+// void	ft_push(t_stack **a, t_stack **b);
+// void 	ft_pb(t_stack **a, t_stack **b);
 
 
 void	print_content(t_stack *data);
-void	del(void *data);
+// void	del(void *data);
 
-void	handle_stack_ab(t_stack **a,t_stack **b);
+
 
 #endif

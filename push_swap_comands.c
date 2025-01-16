@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/14 16:44:45 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/16 17:06:50 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 // turk sort ab bestimmter groeser, davor anderer sort
 // am besten combinieren. 
 
-void ft_push(t_stack **a, t_stack **b)
+void ft_push_a(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
 	if(*a == NULL)
@@ -45,5 +45,64 @@ void ft_push(t_stack **a, t_stack **b)
 		tmp = *a;
 		*a = (*a)->next;
 		lstadd_front_ps(b, tmp);
+		ft_printf("pa\n");
+}
+
+void ft_push_b(t_stack **b, t_stack **a)
+{
+	t_stack *tmp;
+	if(*b == NULL)
+		return;
+	else
+		tmp = *b;
+		*b = (*b)->next;
+		lstadd_front_ps(a, tmp);
 		ft_printf("pb\n");
 }
+
+void ft_rotate_ra (t_stack **a)// erster zur lezten und letzten zu erst 
+{
+	t_stack *head;
+	t_stack *last;
+	// t_stack *prelastnode;
+	head = *a;
+	last = lstlast_ps(*a);
+	*a = head->next;
+	last->next = head;
+	head->next = NULL;
+	
+	// head = *a;
+	// prelastnode = prelast(*a, last);
+	
+	// last->next = head->next; // beide auf zweite 
+	// head->next = NULL;
+	// // vorletzte node next muss auf neue letzte zeigen. also head.
+	// t_stack *tmp;
+	// tmp = head;
+	// head = last;
+	// last = tmp;	
+
+	// prelastnode->next = head;
+	
+}
+
+// t_stack *prelast( t_stack *stack, t_stack *last)
+// {
+	
+// 	t_stack *prelast = stack;
+// 	while(prelast->next != last)// data vergleichen in der node // oder pointer adressen
+// 	{
+// 		prelast = prelast->next;
+// 	}
+// 	return (prelast);
+// }
+
+// void ft_rotate_ra (t_stack **a)
+// {
+	
+// }
+
+// void ft_rr()
+// {
+	
+// }
