@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/16 17:12:54 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/17 10:51:31 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	// if(argc == 3)
 	// 		return(ft_swap_2nbr(&a),0);
 	printf("Stack A before: \n");
-	lstiter_ps(a, put_index);
+	// lstiter_ps(a, put_index);
 	lstiter_ps(a, print_content);
 	printf("\n");
 	printf("Stack B before: \n");
@@ -61,4 +61,10 @@ int main(int argc, char **argv)
 }
 
 
+// void del( t_stack *data)
+// {
+// 	ft_printf("data");
+// 	free(data->data);
+// }
+// wenn fail alle nodes freen. 
 
