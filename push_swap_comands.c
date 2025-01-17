@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/16 17:06:50 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:45:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 // pushing (top to bottom/ bottom to top)
 // pa (push a): Take the first element at the top of b and put it at the top of a.
-// Do nothing if b is empty.
+// 	Do nothing if b is empty.
 // pb (push b): Take the first element at the top of a and put it at the top of b.
-// Do nothing if a is empty.
+// 	Do nothing if a is empty.
 
 // rotating 
 // ra (rotate a): Shift up all elements of stack a by 1.
@@ -36,6 +36,7 @@
 // turk sort ab bestimmter groeser, davor anderer sort
 // am besten combinieren. 
 
+//pb (push b): Take the first element at the top of a and put it at the top of b.
 void ft_push_a(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
@@ -60,49 +61,123 @@ void ft_push_b(t_stack **b, t_stack **a)
 		ft_printf("pb\n");
 }
 
-void ft_rotate_ra (t_stack **a)// erster zur lezten und letzten zu erst 
+//ra (rotate a): Shift up all elements of stack a by 1.
+void ft_rotate_ra (t_stack **a)
 {
 	t_stack *head;
 	t_stack *last;
 	// t_stack *prelastnode;
 	head = *a;
 	last = lstlast_ps(*a);
+	ft_printf("ra\n");
+	*a = head->next;
+	last->next = head;
+	head->next = NULL;	
+}
+
+//rb (rotate b): Shift up all elements of stack b by 1. The first element becomes the last one.
+void ft_rotate_rb (t_stack **b)
+{
+	t_stack *head;
+	t_stack *last;
+	head = *b;
+	last = lstlast_ps(*b);
+	ft_printf("rb\n");
+	*b = head->next;
+	last->next = head;
+	head->next = NULL;
+}
+
+//rr : ra and rb at the same time.
+
+void	ft_rotate_rr(t_stack **a, t_stack **b)
+{
+	t_stack *head;
+	t_stack *last;
+	
+	head = *a;
+	last = lstlast_ps(*a);
 	*a = head->next;
 	last->next = head;
 	head->next = NULL;
-	
-	// head = *a;
-	// prelastnode = prelast(*a, last);
-	
-	// last->next = head->next; // beide auf zweite 
-	// head->next = NULL;
-	// // vorletzte node next muss auf neue letzte zeigen. also head.
-	// t_stack *tmp;
-	// tmp = head;
-	// head = last;
-	// last = tmp;	
 
-	// prelastnode->next = head;
-	
+	head = *b;
+	last = lstlast_ps(*b);
+	*b = head->next;
+	last->next = head;
+	head->next = NULL;
+
+	ft_printf("rr\n");
 }
 
-// t_stack *prelast( t_stack *stack, t_stack *last)
-// {
+// rra (reverse rotate a): Shift down all elements of stack a by 1.
+void	ft_rotate_rra(t_stack **a)
+{
+	t_stack *head;
+	t_stack *lastnode;
+	t_stack *second_last;
 	
-// 	t_stack *prelast = stack;
-// 	while(prelast->next != last)// data vergleichen in der node // oder pointer adressen
-// 	{
-// 		prelast = prelast->next;
-// 	}
-// 	return (prelast);
-// }
+	if( (*a == NULL ) || ((*a)->next == NULL))
+		return;
+		
+	head = *a;
+	lastnode = lstlast_ps(*a);
+	second_last = *a;
+	
+	while(second_last->next->next != NULL)
+	{
+		second_last = second_last->next;
+	}
+	second_last->next = NULL;
+	lastnode->next = head;
+	*a = lastnode;
+	ft_printf("rra\n");
+}
 
-// void ft_rotate_ra (t_stack **a)
-// {
-	
-// }
+// rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
 
-// void ft_rr()
-// {
+void	ft_rotate_rrb(t_stack **b)
+{
+	t_stack *head;
+	t_stack *lastnode;
+	t_stack *second_last;
 	
-// }
+	if( (*b == NULL ) || ((*b)->next == NULL))
+		return;
+		
+	head = *b;
+	lastnode = lstlast_ps(*b);
+	second_last = *b;
+	
+	while(second_last->next->next != NULL)
+	{
+		second_last = second_last->next;
+	}
+	second_last->next = NULL;
+	lastnode->next = head;
+	*b = lastnode;
+	ft_printf("rrb\n");
+}
+// rrr : rra and rrb at the same time.
+void	ft_rotate_rrr(t_stack **a, t_stac)
+{
+	t_stack *head;
+	t_stack *lastnode;
+	t_stack *second_last;
+	
+	if( (*b == NULL ) || ((*b)->next == NULL))
+		return;
+		
+	head = *b;
+	lastnode = lstlast_ps(*b);
+	second_last = *b;
+	
+	while(second_last->next->next != NULL)
+	{
+		second_last = second_last->next;
+	}
+	second_last->next = NULL;
+	lastnode->next = head;
+	*b = lastnode;
+	ft_rotate_rrr(t_stack )
+}

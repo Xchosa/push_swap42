@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/17 11:52:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:21:02 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,12 @@ int		lstsize_ps(t_stack *lst);
 
 void	ft_push_b(t_stack **b, t_stack **a);
 void	ft_push_a(t_stack **a, t_stack **b);
+
 void	ft_rotate_ra (t_stack **a);
-
-
+void	ft_rotate_rb (t_stack **b);
+void	ft_rotate_rr(t_stack **a, t_stack **b);
+void	ft_rotate_rra(t_stack **a);
+void	ft_rotate_rrb(t_stack **b);
 // void	del(void *data);
 
 
