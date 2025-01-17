@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/17 10:51:31 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/17 12:14:26 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@
 // turk swap. 
 
 
-// nodes iniatlisieren
+
+
+
+//teste push und rotate , rb ra , rr 
+
+
+
 int main(int argc, char **argv)
 {
 	t_stack *a;
@@ -42,12 +48,15 @@ int main(int argc, char **argv)
 	printf("Stack A before: \n");
 	// lstiter_ps(a, put_index);
 	lstiter_ps(a, print_content);
+	lstiter_ps(a, put_index);  
 	printf("\n");
 	printf("Stack B before: \n");
 	lstiter_ps(b, print_content);
 
 	
 	// sort(&a, &b);
+	ft_push_a(&a, &b);
+	ft_push_b(&a, &b);
 	ft_rotate_ra(&a);
 	
 	ft_printf("\n");
