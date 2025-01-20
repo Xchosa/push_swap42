@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/17 15:08:45 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:02:40 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main(int argc, char **argv)
 	lstiter_ps(a, print_content);
 	lstiter_ps(a, put_index);
 	printf("\n");
+	
 	// printf("Stack B before: \n");
 	lstiter_ps(b, print_content);
 
@@ -59,16 +60,24 @@ int main(int argc, char **argv)
 	ft_push_a(&a, &b);
 	ft_push_a(&a, &b);
 	ft_push_a(&a, &b);
+	printf("Stack A after inital: \n");
+	lstiter_ps(a, print_content); 
+	
 	printf("Stack B after inital : \n");
 	lstiter_ps(b, print_content);
+	printf("\n");
 	// ft_push_b(&b, &a);
 	// ft_push_a(&a, &b);
 	// ft_rotate_rr(&b , &a);
-	ft_rotate_rra(&a);
+	// ft_rotate_rra(&a);
+	//ft_rotate_rrr(&a, &b);
+	// ft_swap_sb(&b);
+	// ft_swap_sa(&a);
+	ft_swap_ss(&a, &b);
 	
 	
 	ft_printf("\n");
-	printf("Stack A after: \n");
+	printf("Stack A after operation: \n");
 	lstiter_ps(a, print_content);
 	printf("\n");
 	printf("Stack B after: \n");

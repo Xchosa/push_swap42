@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/17 11:55:59 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/20 11:24:54 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,24 @@ LIBFT	= libft/libft.a
 NAME = push_swap
 
 VPATH= 	src:src/list_push_swap:src/sort
+
+
+# SOURCES := $(addprefix $(SRCDIR)/list_push_swap/, lstadd_back_ps.c \
+# 			lstadd_front_ps.c \
+# 			lstclear_ps.c \
+# 			lstiter_ps.c \
+# 			lstlast_ps.c \
+# 			lstnew_ps.c \
+# 			lstsize_ps.c)
+
+# SOURCES += $(addprefix $(SRCDIR)/, push_commands/, push_swap_comands.c \
+# 			push_swap_comands_swap.c)
+
+# SOURCES += main.c \
+# 	parse_nbr.c \
+# 	sorting.c \
+# 	fill_stack.c
+	
 
 MY_SOURCES = \
 			lstadd_back_ps.c \
@@ -29,7 +47,8 @@ MY_SOURCES = \
 			fill_stack.c \
 			parse_nbr.c \
 			sorting.c \
-			push_swap_comands.c
+			push_swap_comands.c \
+			push_swap_comands_swap.c
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
 
