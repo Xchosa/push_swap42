@@ -6,14 +6,14 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:15:59 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 12:04:26 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:33:18 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
 
-
+// sa (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
 void ft_swap_sa(t_stack **a)
 {
 	t_stack *head;
@@ -31,7 +31,7 @@ void ft_swap_sa(t_stack **a)
 }
 
 
-// sa (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
+
 // sb (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
 // ss : sa and sb at the same time.
 

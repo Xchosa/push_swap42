@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 11:26:03 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:37:30 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ int 	parse_data_multiple_arg(char **argv, t_stack **a );
 // fill_stack
 void 	put_index(t_stack *data);
 void	print_content(t_stack *data);
+
 // sorting
-// void	sort(t_stack **a, t_stack **b);
-// bool	check_order(t_stack *a);
+void	sort(t_stack **a, t_stack **b);
+bool	check_order(t_stack **a);
+void	sort_three(t_stack **stack);
 
 
 // list_push_swap
@@ -75,6 +77,11 @@ void	ft_rotate_rra(t_stack **a);
 void	ft_rotate_rrb(t_stack **b);
 void	ft_rotate_rrr(t_stack **a, t_stack **b);
 // void	del(void *data);
+
+//Sorting Algo
+// find 
+t_stack *get_max_nbr_totalstack(t_stack **stack);
+t_stack *get_min_nbr_totalstack(t_stack **stack);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/17 11:59:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/20 15:01:32 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,23 @@ void print_content(t_stack *data)
 	ft_printf("data: %d | index:  %d\n", data->data, data->index);
 }
 
+
+
+// find closest smalest nbr
+// void find_target_b(t_stack **a, t_stack **b)
+// {
+// 	t_stack *tmp;
+// 	t_stack *closest;
+// 	int		minimal_diff;
+	
+// 	while(*a != NULL)
+// 	{
+// 		closest = NULL;
+// 		minimal_diff = INT_MAX;
+// 		tmp = b;
+// 		while(tmp != NULL)
+// 		{
+// 			if(tmp ->data < a->data && (a->data ))
+// 		}
+// 	}
+// }

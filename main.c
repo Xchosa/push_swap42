@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 12:02:40 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:20:09 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,9 @@ int main(int argc, char **argv)
 	// ft_push_a(&a, &b);
 	ft_push_a(&a, &b);
 	ft_push_a(&a, &b);
-	ft_push_a(&a, &b);
 	printf("Stack A after inital: \n");
 	lstiter_ps(a, print_content); 
-	
+	ft_printf("\n");
 	printf("Stack B after inital : \n");
 	lstiter_ps(b, print_content);
 	printf("\n");
@@ -72,9 +71,14 @@ int main(int argc, char **argv)
 	// ft_rotate_rra(&a);
 	//ft_rotate_rrr(&a, &b);
 	// ft_swap_sb(&b);
-	// ft_swap_sa(&a);
-	ft_swap_ss(&a, &b);
+	//ft_swap_sa(&a);
+	// ft_swap_ss(&a, &b);
+	sort_three(&a);
 	
+	if(!check_order(&a))
+		ft_printf("a not sorted");
+	else
+		ft_printf("a is sorted");
 	
 	ft_printf("\n");
 	printf("Stack A after operation: \n");
