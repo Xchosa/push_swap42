@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 14:05:01 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:36:55 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	printf("Stack A before: \n");
 	// lstiter_ps(a, put_index);
 	lstiter_ps(a, print_content);
-	lstiter_ps(a, put_index);
+	// lstiter_ps(a, put_index);
 	printf("\n");
 	if(lstsize_ps(a)== 2)
 		// sort_two

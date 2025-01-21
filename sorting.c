@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 14:25:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:28:24 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,57 +27,7 @@ bool check_order(t_stack **stack)
 	}
 	return(true);
 }
-//find max Number
-t_stack *get_max_nbr_totalstack(t_stack **stack)
-{
-	t_stack *max_nbr;
-	t_stack *current_nbr;
-	
-	current_nbr = *stack;
-	max_nbr = *stack;
-	
-	while( stack != NULL)
-	{
-		if(max_nbr->data < current_nbr->data)
-			max_nbr = current_nbr;
-		else
-			current_nbr= current_nbr ->next;
-	}
-	return(max_nbr);
-}
 
-//find smallest Number
-t_stack *get_min_nbr_totalstack(t_stack **stack)
-{
-	t_stack *min_nbr;
-	t_stack *current_nbr;
-	
-	current_nbr = *stack;
-	min_nbr = *stack;
-	
-	while( stack != NULL)
-	{
-		if(min_nbr->data > current_nbr->data)
-			min_nbr = current_nbr;
-		else
-			current_nbr= current_nbr ->next;
-	}
-	return(min_nbr);
-}
-
-void sort(t_stack **a, t_stack **b)
-{
-	int a_nbr;
-	// int b_nbr;
-	
-	a_nbr = lstsize_ps(*a);
-	
-	while(a_nbr >3 && !check_order(a))
-	{
-		sort_three(a);
-	}
-	free(b);
-}
 
 void	sort_three(t_stack **stack)
 {
@@ -118,34 +68,3 @@ void	sort_two(t_stack **stack)
 }
 
 
-void sorting_more(t_stack **a, t_stack **b)
-{
-	int size_stack;
-	t_stack *min_nbr;
-	size_stack = lstsize_ps(a);
-	if(size_stack > 3 && !check_order(a))
-	{
-		ft_push_a(a, b);
-		size_stack--;
-	}
-	if(size_stack > 3 && !check_order(a))
-	{
-		ft_push_a(a, b);
-		size_stack--;
-	}
-	while(size_stack > 3 && !check_order(a))
-	{
-		
-		size_stack--;
-	}
-	ft_push_a(a, b);
-	ft_push_a(a, b);
-	sort_three(b); // 
-	// min_nbr =  get_min_nbr_totalstack(t_stack )
-	
-}
-
-void cheapest(t_stack **a, t_stack **b)
-{
-	
-}

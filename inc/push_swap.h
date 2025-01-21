@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 13:48:01 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:14:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 	long		data;
 	int			index;
 	int			push_cost;
-	int			above_median;
+	bool		above_median;
 	// bool		cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
@@ -51,6 +51,11 @@ void	sort(t_stack **a, t_stack **b);
 bool	check_order(t_stack **a);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
+
+//Sort Algo
+void	fill_nodes(t_stack **a, t_stack **b);
+void 	give_index(t_stack **stack);
+void	set_target(t_stack **a, t_stack **b);
 
 
 // list_push_swap
