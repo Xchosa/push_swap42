@@ -6,18 +6,18 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 16:41:00 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:25:10 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
 
-bool check_order(t_stack **a)
+bool check_order(t_stack **stack)
 {
 	t_stack *current_nbr;
 	
-	current_nbr = *a;
+	current_nbr = *stack;
 	
 	while(current_nbr->next != NULL)
 	{
@@ -64,29 +64,19 @@ t_stack *get_min_nbr_totalstack(t_stack **stack)
 	}
 	return(min_nbr);
 }
-// cloest smaler number is re
-// t_stack *cheapest_node_reachable(t_stack **stack)
-// {
-// 	t_stack cheapest;
-// 	// operations to bring a on top
-// 	//operations to bring a->target node on top = push cost
-
-// 	if(a->data <  b->data)
-// 		ft_push_a(&a);
-// }
 
 void sort(t_stack **a, t_stack **b)
 {
 	int a_nbr;
-	int b_nbr;
+	// int b_nbr;
 	
 	a_nbr = lstsize_ps(*a);
 	
-	while(a_nbr >3 && !check_order(&a))
+	while(a_nbr >3 && !check_order(a))
 	{
-		sort_three(*a);
+		sort_three(a);
 	}
-	
+	free(b);
 }
 
 void	sort_three(t_stack **stack)
@@ -116,4 +106,46 @@ void	sort_three(t_stack **stack)
 		ft_rotate_rra(stack);
 		ft_swap_sa(stack);
 	}
+}
+
+
+void	sort_two(t_stack **stack)
+{
+	if(!check_order(stack))
+		ft_swap_sa(stack);
+	else
+		lstiter_ps(*stack, print_content);
+}
+
+
+void sorting_more(t_stack **a, t_stack **b)
+{
+	int size_stack;
+	t_stack *min_nbr;
+	size_stack = lstsize_ps(a);
+	if(size_stack > 3 && !check_order(a))
+	{
+		ft_push_a(a, b);
+		size_stack--;
+	}
+	if(size_stack > 3 && !check_order(a))
+	{
+		ft_push_a(a, b);
+		size_stack--;
+	}
+	while(size_stack > 3 && !check_order(a))
+	{
+		
+		size_stack--;
+	}
+	ft_push_a(a, b);
+	ft_push_a(a, b);
+	sort_three(b); // 
+	// min_nbr =  get_min_nbr_totalstack(t_stack )
+	
+}
+
+void cheapest(t_stack **a, t_stack **b)
+{
+	
 }

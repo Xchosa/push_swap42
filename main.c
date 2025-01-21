@@ -6,20 +6,16 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 16:20:09 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:05:01 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-// stack initieren
-// drucken lassen
-// befehle implementieren
+
 // sortieren
 // linked list - ohne das es auf den Anfang zeigt
 // turk swap. 
-
-
 
 
 
@@ -38,7 +34,8 @@ int main(int argc, char **argv)
 	if(argc < 2)
 		return (EXIT_SUCCESS);
 	parse_result = start_parse(argc, argv, &a);
-	if(parse_result == EXIT_FAILURE)
+	// int check = check_duplicates(&a);
+	if(parse_result == EXIT_FAILURE )
 	{
 		// lstiter_ps(a, del);
 		return(EXIT_FAILURE);
@@ -50,7 +47,10 @@ int main(int argc, char **argv)
 	lstiter_ps(a, print_content);
 	lstiter_ps(a, put_index);
 	printf("\n");
-	
+	if(lstsize_ps(a)== 2)
+		// sort_two
+	if(lstsize_ps(a) == 3)
+		sort_three(&a);
 	// printf("Stack B before: \n");
 	lstiter_ps(b, print_content);
 
@@ -86,6 +86,7 @@ int main(int argc, char **argv)
 	printf("\n");
 	printf("Stack B after: \n");
 	lstiter_ps(b, print_content);
+	// free_stack (a)
 	// ft_sa(&a);
 	
 }

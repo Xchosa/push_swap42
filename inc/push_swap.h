@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 16:37:30 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 13:48:01 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@
 
 typedef struct s_stack
 {
+	bool		is_a;
 	long		data;
 	int			index;
 	int			push_cost;
 	int			above_median;
+	// bool		cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
 }	t_stack;
@@ -38,6 +40,7 @@ typedef struct s_stack
 int		start_parse(int argc, char **argv, t_stack**a);
 int		parse_input(char **data, t_stack **a);
 int 	parse_data_multiple_arg(char **argv, t_stack **a );
+int		check_duplicates(t_stack **stack);
 
 // fill_stack
 void 	put_index(t_stack *data);
@@ -46,6 +49,7 @@ void	print_content(t_stack *data);
 // sorting
 void	sort(t_stack **a, t_stack **b);
 bool	check_order(t_stack **a);
+void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
 
 

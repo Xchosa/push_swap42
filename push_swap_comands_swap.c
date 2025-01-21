@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:15:59 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 16:33:18 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:58:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void ft_swap_sa(t_stack **a)
 	second_head->next = head;
 	*a = second_head;
 	
-	
-	ft_printf("sa\n");
+	// if (head->is_a)
+		ft_printf("sa\n");
+	// else
+	// 	ft_printf("sb\n")
 }
 
 

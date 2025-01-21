@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/17 11:56:26 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:16:46 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int parse_data(char *data, t_stack **a)
 			ft_printf("INT_MIN: %d", nbr);
 			return(EXIT_FAILURE);
 		}
-		// check for dublicates 42 and 42
 		stack_lst = lstnew_ps(nbr);
 		if(!stack_lst)
 		{
@@ -48,7 +47,10 @@ int parse_data(char *data, t_stack **a)
 			lstadd_back_ps(a, stack_lst);
 		i++;
 	}
-	return(EXIT_SUCCESS);
+	if(check_duplicates(a) == 1)
+		return(EXIT_FAILURE);
+	else 
+		return(EXIT_SUCCESS);	
 }
 		
 // mulitple Arguments 
@@ -79,9 +81,10 @@ int parse_data_multiple_arg(char **argv, t_stack **a )
 				lstadd_back_ps(a, stack_lst);
 			i++;
 		}
-		//wenn alle nodes erstellt sind 
-		// check for dublicates 42 and 42 // nr 1 schaut auf alle danach, pos 4 schaut nicht mehr pos 3 an // 
-		return(EXIT_SUCCESS);
+		if(check_duplicates(a) == 1)
+			return(EXIT_FAILURE);
+		else 
+			return(EXIT_SUCCESS);	
 }
 
 
@@ -100,4 +103,30 @@ int start_parse(int argc, char **argv, t_stack **a )
 		return(parse_result);
 	}
 	return (EXIT_FAILURE);
+}
+
+int	check_duplicates(t_stack **stack)
+{
+	t_stack *current;
+	t_stack *check;
+	current = *stack;
+	check = current->next;
+	
+	
+	while(current->next != NULL)
+	{
+		while(check->next != NULL)
+		{
+			if(current->data == check->data)
+			{
+				ft_printf("doubble");
+				return(EXIT_FAILURE);
+			}
+			else
+				check  = check->next;
+		}
+		current = current->next;
+		check = current->next;
+	}
+	return(EXIT_SUCCESS);
 }
