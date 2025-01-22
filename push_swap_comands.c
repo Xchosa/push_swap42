@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/20 11:26:22 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:35:24 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 // am besten combinieren. 
 
 //pb (push b): Take the first element at the top of a and put it at the top of b.
-void ft_push_a(t_stack **a, t_stack **b)
+void ft_push_pa(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
 	if(*a == NULL)
@@ -41,7 +41,7 @@ void ft_push_a(t_stack **a, t_stack **b)
 	}
 }
 
-void ft_push_b(t_stack **b, t_stack **a)
+void ft_push_pb(t_stack **b, t_stack **a)
 {
 	t_stack *tmp;
 	if(*b == NULL)
@@ -63,6 +63,7 @@ void ft_rotate_ra (t_stack **a)
 	// t_stack *prelastnode;
 	head = *a;
 	last = lstlast_ps(*a);
+	// if(print == 1 )
 	ft_printf("ra\n");
 	*a = head->next;
 	last->next = head;
@@ -76,6 +77,7 @@ void ft_rotate_rb (t_stack **b)
 	t_stack *last;
 	head = *b;
 	last = lstlast_ps(*b);
+	// if(print = 1)
 	ft_printf("rb\n");
 	*b = head->next;
 	last->next = head;

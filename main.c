@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 14:36:55 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:40:00 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,29 +51,26 @@ int main(int argc, char **argv)
 		// sort_two
 	if(lstsize_ps(a) == 3)
 		sort_three(&a);
-	// printf("Stack B before: \n");
+	printf("Stack B before: \n");
 	lstiter_ps(b, print_content);
 
-	
+	// give_index(&a);
+	// give_index(&b);
+	// set_target(&a, &b);
+	// calculate_cost(a,b);
+	// sorting_more(&a,&b);
+	sort_5(&a, &b);
 	// sort(&a, &b);
 	// ft_push_a(&a, &b);
-	ft_push_a(&a, &b);
-	ft_push_a(&a, &b);
+	// ft_push_a(&a, &b);
+	// ft_push_a(&a, &b);
 	printf("Stack A after inital: \n");
 	lstiter_ps(a, print_content); 
 	ft_printf("\n");
 	printf("Stack B after inital : \n");
 	lstiter_ps(b, print_content);
 	printf("\n");
-	// ft_push_b(&b, &a);
-	// ft_push_a(&a, &b);
-	// ft_rotate_rr(&b , &a);
-	// ft_rotate_rra(&a);
-	//ft_rotate_rrr(&a, &b);
-	// ft_swap_sb(&b);
-	//ft_swap_sa(&a);
-	// ft_swap_ss(&a, &b);
-	sort_three(&a);
+	
 	
 	if(!check_order(&a))
 		ft_printf("a not sorted");
