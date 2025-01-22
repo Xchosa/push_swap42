@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 15:14:41 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:22:28 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,30 +72,50 @@ void set_target(t_stack **a, t_stack **b)
 		a  = (*a)->next;
 	}
 }
+void calculate_cost(t_stack **a, t_stack **b)
+{
+	int stack_size_a;
+	int stack_size_b;
+	
+	stack_size_a = lstsize_ps(*a);
+	stack_size_b = lstsize_ps(*b);
+	while ((*a)->next != NULL)
+	{
+		(*a)->push_cost = (*a)->index;
+		if (!(*a)->above_median)
+			(*a)->push_cost = stack_size_a - (*a)->index;
+		if ((*a)->target->above_median)
+			(*a)->push_cost = (*a)->push_cost + (*a)->target->index;
+		else
+			(*a)->push_cost = (*a)->push_cost + stack_size_b - (*a)->target->index;
+		a  = (*a)->next;
+	}
+}
 
+void find_cheapest_node(t_stack **stack)
+{
+	long	cheapest_data;
+	t_stack	*cheapest_node;
+	cheapest_data = LONG_MAX;
+	
+	while ((*stack)->next != NULL)
+	{
+		if((*stack)->push_cost < cheapest_data)
+		{
+			cheapest_data = (*stack)->push_cost;
+			cheapest_node = stack;
+		}
+		stack = (*stack)->next;
+	}
+	cheapest_node->cheapest = true;
+	
+}
 
 void fill_nodes(t_stack **a, t_stack **b)
 {
 	give_index(a);
 	give_index(b);
 	set_target(a, b);
+	calculate_cost(a,b);
+	set_cheapest(a);
 }
-
-// find closest smalest nbr
-// void find_target_b(t_stack **a, t_stack **b)
-// {
-// 	t_stack *tmp;
-// 	t_stack *closest;
-// 	int		minimal_diff;
-	
-// 	while(*a != NULL)
-// 	{
-// 		closest = NULL;
-// 		minimal_diff = INT_MAX;
-// 		tmp = b;
-// 		while(tmp != NULL)
-// 		{
-// 			if(tmp ->data < a->data && (a->data ))
-// 		}
-// 	}
-// }

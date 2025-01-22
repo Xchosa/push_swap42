@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:16:19 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 14:28:31 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:42:50 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void sorting_more(t_stack **a, t_stack **b)
 	int size_stack;
 	t_stack *min_nbr;
 	size_stack = lstsize_ps(a);
+	// better sortalgo for 5 and less 
 	if(size_stack > 3 && !check_order(a))
 	{
 		ft_push_a(a, b);
@@ -40,6 +41,7 @@ void sorting_more(t_stack **a, t_stack **b)
 	}
 	while(size_stack > 3 && !check_order(a))
 	{
+		fill_nodes(a,b);
 		
 		size_stack--;
 	}
@@ -50,11 +52,27 @@ void sorting_more(t_stack **a, t_stack **b)
 	
 }
 
-void cheapest(t_stack **a, t_stack **b)
+void a_stack_to_b_stack (t_stack **a, t_stack **b)
 {
-	
+	t_stack *cheapest_node;
+	cheapest_node = pointer_to_cheapest_node(a);
+	if((cheapest_node->above_median) && cheapest_node->target->above_median)
+		ft_rotate_rrr(a,b);
+	else if()
 }
 
+t_stack	*pointer_to_cheapest_node(t_stack **stack)
+{
+	if(stack == NULL)
+		return(NULL);
+	while((*stack)->next != NULL)
+	{
+		if((*stack)->cheapest)
+			return (stack);
+		(*stack) = (*stack)->next;
+	}
+	return (NULL);
+}
 
 
 
