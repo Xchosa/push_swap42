@@ -6,31 +6,36 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 16:31:36 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 16:27:24 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-// void put_index(t_stack *data)
-// {
-// 	data->index++;
-// 	// bubbelsort nach kleinster nummer 
-// 	// 
-// 	// einen Loop kleinste 
-// 	// bubbelsort 
-// }
+// remember allways set stack back to head. 
 
 void	print_content(t_stack *data)
 {
-	ft_printf("data: %d | index:  %d\n", data->data, data->index);
+	ft_printf("data: %d | index:  %d " ,data->data, data->index);
+	if (!(data->above_median))
+		ft_printf("above_median false\n");
+	else
+		ft_printf("above_median true\n");
 }
 
+	
+
+
+// count through the stack. From 0 on. 
+// give boolen value above median or below. 
+// set stack back to head. 
 void	give_index(t_stack **stack)
 {
 	int i;
 	int median;
-
+	t_stack *head;
+	
+	head = *stack;
 	i = 0;
 	if(stack == NULL || *stack == NULL)
 		return;
@@ -39,13 +44,15 @@ void	give_index(t_stack **stack)
 	{
 		(*stack)->index = i;
 		if(i <= median)
-			(*stack)->above_median = true;
-		else
 			(*stack)->above_median = false;
+		else
+			(*stack)->above_median = true;
 		stack = &((*stack)->next);
 		i++;
 	}
+	stack = &head;
 }
+
 //
 void	set_target(t_stack **a, t_stack **b)
 {

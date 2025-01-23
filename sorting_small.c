@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 16:45:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 12:13:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,24 @@ void	sort_two(t_stack **stack)
 		lstiter_ps(*stack, print_content);
 }
 
-void sort_5(t_stack **a, t_stack **b)
+void sort_four(t_stack **a, t_stack **b)
+{
+	give_index(a);
+	get_min_nbr_totalstack(a);
+	smallest_on_top_a(a);
+	ft_push_pa(a,b);
+	sort_three(a);
+	ft_push_pb(a,b);
+	int i = 1;
+	while(!check_order(a) && i < 5)
+	{
+		ft_rotate_ra (a);
+		i++;
+	}
+}
+
+
+void sort_five(t_stack **a, t_stack **b)
 {
 	give_index(a);
 	smallest_on_top_a(a);// fill median 

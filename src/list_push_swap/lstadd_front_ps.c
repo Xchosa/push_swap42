@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstadd_front_doubly.c                              :+:      :+:    :+:   */
+/*   lstadd_front_ps.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:23:12 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/09 14:57:38 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:55:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void	lstadd_front_ps(t_stack **lst, t_stack *new)
 		new->next = *lst;
 		*lst = new;
 	}
+	// lstlast_ps(*lst)->next = new;
 }

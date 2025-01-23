@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 16:39:28 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 15:21:55 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,18 @@ int		check_duplicates(t_stack **stack);
 void 	give_index(t_stack **data);
 void	print_content(t_stack *data);
 
-// sorting
-void	sort(t_stack **a, t_stack **b);
+// sorting msall 
 bool	check_order(t_stack **a);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
-void	sort_5(t_stack **a, t_stack **b);
+void	sort_four(t_stack **a, t_stack **b);
+void	sort_five(t_stack **a, t_stack **b);
+
+
+// sort Algo
+void	chose_sorting(t_stack **a, t_stack **b);
+void	turkswapsorting(t_stack **a,t_stack **b);
+void	set_index(t_stack **stack);
 
 //Sort Algo (in fill.stack)
 void	sorting_more(t_stack **a, t_stack **b);
