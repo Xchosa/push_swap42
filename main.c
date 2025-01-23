@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/23 12:15:22 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 16:39:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ int main(int argc, char **argv)
 	// ft_push_a(&a, &b);
 	// ft_push_a(&a, &b);
 	// ft_push_a(&a, &b);
-	printf("Stack A after inital: \n");
+	printf("Stack A after sorting: \n");
 	lstiter_ps(a, print_content); 
 	ft_printf("\n");
-	printf("Stack B after inital : \n");
+	printf("Stack B after sorting : \n");
 	lstiter_ps(b, print_content);
 	printf("\n");
 	
@@ -71,11 +71,12 @@ int main(int argc, char **argv)
 		ft_printf("a is sorted");
 	
 	ft_printf("\n");
-	printf("Stack A after operation: \n");
-	lstiter_ps(a, print_content);
-	printf("\n");
-	printf("Stack B after: \n");
+	printf("Stack A after sorting: \n");
+	lstiter_ps(a, print_content); 
+	ft_printf("\n");
+	printf("Stack B after sorting : \n");
 	lstiter_ps(b, print_content);
+	printf("\n");
 	// free_stack (a)
 	// ft_sa(&a);
 	

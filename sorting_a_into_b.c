@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/23 16:28:19 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/23 18:31:20 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,19 @@ void turkswapsorting(t_stack **a,t_stack **b)
 	ft_push_pb(a, b);
 	give_index(a);
 	give_index(b);
-	int i = 0;
-	while(lst_size_ps(a) > 3 || i < 10)
-	{
+	//lstiter_ps(*a, print_content);
+	// lstiter_ps(*b, print_content); 
+	sort_2_descending(b);
+	set_target_in_a(a,b);
+	// lstiter_ps(*b, print_content);
+	// lstiter_ps(*a, print_content); 
+	// set_target(a, b);
+	// int i = 0;
+	// while(lstsize_ps(*a) > 3 || i < 10)
+	// {
 		
-		i++;
-	}
+	// 	i++;
+	// }
 	// sort_three(a);
 
 	
