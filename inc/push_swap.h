@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 11:32:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:26:10 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int 	parse_data_multiple_arg(char **argv, t_stack **a );
 int		check_duplicates(t_stack **stack);
 
 // fill_stack
-void 	give_index(t_stack **data);
+void	give_index_and_median(t_stack **stack);
 void	print_content(t_stack *data);
 
 // sorting msall 
@@ -60,9 +60,13 @@ void	turkswapsorting(t_stack **a,t_stack **b);
 void	sort_2_descending(t_stack **b);
 void	target_of_a_in_stack_b(t_stack **a, t_stack **b);
 //void	set_target_in_a(t_stack **a, t_stack **b);
+int		calc_steps_for_cheapest_move(t_stack **a, t_stack **b);
+void	reset_cheapest(t_stack *cheapest);
 
 //testing
 void	print_content_targetnode(t_stack *data);
+void	print_content_above_median(t_stack *data);
+void	print_content_targetnode_cheapest (t_stack *data);
 
 //Sort Algo (in fill.stack)
 void	sorting_more(t_stack **a, t_stack **b);

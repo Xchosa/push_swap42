@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/23 12:13:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:11:40 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sort_two(t_stack **stack)
 
 void sort_four(t_stack **a, t_stack **b)
 {
-	give_index(a);
+	give_index_and_median(a);
 	get_min_nbr_totalstack(a);
 	smallest_on_top_a(a);
 	ft_push_pa(a,b);
@@ -86,7 +86,7 @@ void sort_four(t_stack **a, t_stack **b)
 
 void sort_five(t_stack **a, t_stack **b)
 {
-	give_index(a);
+	give_index_and_median(a);
 	smallest_on_top_a(a);// fill median 
 	// calculate_cost(t_stack **a, t_stack **b)
 	ft_push_pa(a, b);
