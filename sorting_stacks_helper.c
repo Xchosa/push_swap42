@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:16:19 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 16:34:29 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:06:07 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ void	 smallest_on_top_a(t_stack **a)
 }
 
 //find max Number
+// get pointer to Node with biggest Num of the total stack
 t_stack *get_max_nbr_totalstack(t_stack **stack)
 {
 	t_stack *max_nbr;
@@ -144,7 +145,7 @@ t_stack *get_max_nbr_totalstack(t_stack **stack)
 	current_nbr = *stack;
 	max_nbr = *stack;
 	
-	while( stack != NULL)
+	while( current_nbr != NULL)
 	{
 		if(max_nbr->data < current_nbr->data)
 			max_nbr = current_nbr;
@@ -163,7 +164,7 @@ t_stack *get_min_nbr_totalstack(t_stack **stack)
 	current_nbr = *stack;
 	min_nbr = *stack;
 	
-	while( stack != NULL)
+	while( current_nbr != NULL)
 	{
 		if(min_nbr->data > current_nbr->data)
 			min_nbr = current_nbr;

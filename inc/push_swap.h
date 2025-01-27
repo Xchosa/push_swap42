@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/23 18:29:20 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:32:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,11 @@ void	sort_five(t_stack **a, t_stack **b);
 void	chose_sorting(t_stack **a, t_stack **b);
 void	turkswapsorting(t_stack **a,t_stack **b);
 void	sort_2_descending(t_stack **b);
-void	set_target_in_a(t_stack **a, t_stack **b);
+void	target_of_a_in_stack_b(t_stack **a, t_stack **b);
+//void	set_target_in_a(t_stack **a, t_stack **b);
+
+//testing
+void	print_content_targetnode(t_stack *data);
 
 //Sort Algo (in fill.stack)
 void	sorting_more(t_stack **a, t_stack **b);
