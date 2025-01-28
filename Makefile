@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/27 12:06:37 by poverbec         ###   ########.fr        #
+#    Updated: 2025/01/28 10:57:04 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ MY_SOURCES = \
 			lstsize_ps.c \
 			main.c \
 			sorting_a_into_b.c \
+			sorting_and_moving.c \
 			fill_stack.c \
 			parse_nbr.c \
 			sorting_small.c \

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 16:45:17 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 10:57:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,16 @@ void turkswapsorting(t_stack **a,t_stack **b)
 	// while loop until stack a = 3 
 	give_index_and_median(b); // reset index, median, 
 	// give all cheapest to false 
+	calc_push_cost_in_a(a, b);
+	t_stack *cheapestnode_a = find_a_node_for_cheapest_move(a,b);
+	calc_push_cost_for_target(cheapestnode_a, b);
+	
 	printf("Stack A targetnodes \n");
 	lstiter_ps(*a, print_content_targetnode);
 	printf("Stack B targetnodes \n");
 	lstiter_ps(*b, print_content_above_median);
 
-	int push_costs = calc_steps_for_cheapest_move(a, b); // cheapest in stack b is marked "cheapest true"
+	// int push_costs = calc_steps_for_cheapest_move(a, b); // cheapest in stack b is marked "cheapest true"
 	printf("Stack B cheapest\n");
 	lstiter_ps(*b, print_content_targetnode_cheapest);
 	
@@ -105,10 +109,41 @@ void target_of_a_in_stack_b(t_stack **a, t_stack **b)
 		(current_a) = (current_a)->next;
 	}
 }
+// calc push cost 
+// only after giving each node in a its struct  int push_cost to move the node to top of stack
+
 // moves to bring a on top
 // + moves to bring a-targetnode on top (in stack b)
-// braucht man beachten wo node a ist? bisher wieviele schritte braucht man um die targetnode f
-int calc_steps_for_cheapest_move(t_stack **a, t_stack **b)
+void calc_push_cost_in_a(t_stack *a, t_stack *b)
+{
+	int push_cost_a;
+	int push_cost_b;
+	
+	if(a->above_median)
+		push_cost_a = a->index;
+	if(!(a->above_median))
+		push_cost_a = (lstlast_ps(a)->index - a->index);
+	if(a->target->above_median)
+		push_cost_b = a->target->index;
+	if(!(a->target->above_median))
+		push_cost_b = (lstlast_ps(b)->index - a->target->index);
+
+	if(a->above_median && a->target->above_median)
+	{
+		if(push_cost_a > push_cost_b)
+			a->push_cost = push_cost_a;
+		if(push_cost_a < push_cost_b)
+			a->push_cost = push_cost_b;
+	}
+	if((a->above_median) != (a->target->above_median))
+	{
+		a->push_cost = push_cost_a + push_cost_b;
+	}
+}
+
+// find cheapest node , the node in a with lowest push_cost (given in calc_push_cost_in_a)
+// set target_node in b stack on true // dont need it?
+t_stack *find_a_node_for_cheapest_move(t_stack **a, t_stack **b)
 {
 	int push_costs;
 	int smallest_push_costs;
@@ -116,51 +151,41 @@ int calc_steps_for_cheapest_move(t_stack **a, t_stack **b)
 	smallest_push_costs = INT_MAX;
 	t_stack *current_a;
 	t_stack *current_b;
+	t_stack *cheapest_node;
 	current_a = *a;
 	while(current_a != NULL)
 	{
 		push_costs = 0;
-		if(current_a->target->above_median == true && current_a->target != NULL)
+		if( smallest_push_costs > current_a->push_cost)
 		{
-			current_b = *b;
-			while (current_a->target != current_b && current_b != NULL) // costen nach oben zu bringen. 
-			{
-				current_b = current_b ->next;
-				push_costs++;
-			}
-			if (push_costs <= smallest_push_costs)
-			{
-				smallest_push_costs = push_costs;
-				lstiter_ps(current_b, reset_cheapest); // only current_a target lowest_push cost gets cheapest 
-				current_b->cheapest = true;// migth be more than one cheapest - first one will be chosen
-			}
+			smallest_push_costs = current_a->push_cost;
+			// lstiter_ps(current_a, reset_cheapest);
+			// current_a->target->cheapest = true;
+			cheapest_node = NULL;
+			cheapest_node = current_a;
 		}
-		else if(current_a->target->above_median ==false && current_a->target != NULL)
-		{
-			current_b = *b;
-			while (current_a->target != current_b && current_b != NULL)
-			{
-				push_costs = ((lstlast_ps(current_b)->index) - current_b->index) + 1;
-				current_b = current_b ->next;
-			}
-			if (push_costs <= smallest_push_costs && current_b != NULL)
-			{
-				smallest_push_costs = push_costs;
-				lstiter_ps(current_b, reset_cheapest);
-				current_b->cheapest = true;// migth be more than one cheapest - first one will be chosen
-			}
-		}
-		current_a = current_a ->next;
+		else
+			current_a = current_a->next;
 	}
-	return(smallest_push_costs);
+	return(cheapest_node);
 }
-
-void move_cheapest_node_in_a_and_b_to_top(t_stack **a, t_stack **b)
+// cheapest node in a is found, and has a target_node in b;
+// cheapest node is the one needed with the fewest step to move on top, and according to its target node;
+// asign each node its own cost to move to top 
+void cost_to_move_node_to_top(t_stack *a, t_stack *b, t_stack *cheapest_node_a)
 {
-	t_stack *current_a;
-	current_a = *a;
-	if()
-	while (current_a->target->cheapest != true) 
-		current_a= current_a ->next 
+	int push_cost_a;
+	int push_cost_b;
+	if(cheapest_node_a->above_median)
+		push_cost_a = cheapest_node_a->index;
+	if(!(cheapest_node_a->above_median))
+		push_cost_a = (lstlast_ps(a)->index - cheapest_node_a->index);
+	if(cheapest_node_a->target->above_median)
+		push_cost_b = cheapest_node_a->target->index;
+	if(!(cheapest_node_a->target->above_median))
+		push_cost_b = lstlast_ps(cheapest_node_a->target)->index - cheapest_node_a->target->index;
+
+	cheapest_node_a->push_cost = push_cost_a;
+	cheapest_node_a->target->push_cost = push_cost_b;
 }
 
