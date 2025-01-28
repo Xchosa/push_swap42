@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 11:46:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:37:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,43 @@ void turkswapsorting(t_stack **a,t_stack **b)
 	ft_push_pb(a, b);
 	ft_push_pb(a, b);
 	give_index_and_median(a);
-	sort_2_descending(b);
+	// sort_2_descending(b);
 	
 	//testing
-	printf("Stack A bevor algo \n");
-	lstiter_ps(*a, print_content);
-	printf("Stack B bevor algo \n");
+	// printf("Stack A bevor algo \n");
+	// lstiter_ps(*a, print_content);
+	printf("\n Stack B bevor algo \n");
 	lstiter_ps(*b, print_content);
-	printf("test for while loop\n \n");
+	printf("\n test for while loop\n \n");
 	
 	target_of_a_in_stack_b(a,b);// nodes in a get a target node in b// works
 	// while loop until stack a = 3 
 	give_index_and_median(b); // reset index, median, 
-	// give all cheapest to false 
+	printf("\n Stack A bevor algo \n");
+	lstiter_ps(*a, print_content_targetnode);// give all cheapest to false 
+	printf("\n Stack B before algo \n \n");
+	lstiter_ps(*b, print_content);
+	
 	calc_push_cost_in_a(*a, *b);
+	printf("\n Stack A Push_cost \n");
+	lstiter_ps(*a, print_content_targetnode);
+	
 	cheapestnode_a = find_a_node_for_cheapest_move(a);// cheapest node + its target node
-	ft_printf("cheapest node \n data: %d | index:  %d \n" ,cheapestnode_a->data, cheapestnode_a->index);
+	ft_printf("cheapest node \n data: %d | index:  %d | pushcost before: %d \n" ,cheapestnode_a->data, cheapestnode_a->index, cheapestnode_a->push_cost);
 	cost_to_move_node_to_top(*a, *b, cheapestnode_a);
 	ft_printf("cheapest node \n pushcost: %d | index:  %d  | data : %d \n" ,cheapestnode_a->push_cost, cheapestnode_a->index, cheapestnode_a->data);
 
 	chose_rotate_command(a,b, cheapestnode_a); // functions to rotate or rev rotate
-
 	
-	printf("Stack A median \n");
-	lstiter_ps(*a, print_content_above_median);
-	printf("Stack B median \n");
-	lstiter_ps(*b, print_content_above_median);
+
+	printf("\n Stack A  \n");
+	lstiter_ps(*a, print_content_plain);
+	printf("\n Stack B with one more \n");
+	lstiter_ps(*b, print_content_plain);
+	// printf("Stack A median \n");
+	// lstiter_ps(*a, print_content_above_median);
+	// printf("Stack B median \n");
+	// lstiter_ps(*b, print_content_above_median);
 
 	// // int push_costs = calc_steps_for_cheapest_move(a, b); // cheapest in stack b is marked "cheapest true"
 	// printf("Stack B cheapest\n");
@@ -125,26 +136,42 @@ void calc_push_cost_in_a(t_stack *a, t_stack *b)
 {
 	int push_cost_a;
 	int push_cost_b;
-	
-	if(a->above_median)
-		push_cost_a = a->index;
-	if(!(a->above_median))
-		push_cost_a = (lstlast_ps(a)->index - a->index);
-	if(a->target->above_median)
-		push_cost_b = a->target->index;
-	if(!(a->target->above_median))
-		push_cost_b = (lstlast_ps(b)->index - a->target->index);
-
-	if(a->above_median && a->target->above_median)
+	while(a != NULL)
 	{
-		if(push_cost_a > push_cost_b)
-			a->push_cost = push_cost_a;
-		if(push_cost_a < push_cost_b)
-			a->push_cost = push_cost_b;
-	}
-	if((a->above_median) != (a->target->above_median))
-	{
-		a->push_cost = push_cost_a + push_cost_b;
+		push_cost_a = 0;
+		push_cost_b = 0;
+		if(a->above_median)
+			push_cost_a = a->index;
+		else //(!(a->above_median))
+			push_cost_a = (lstlast_ps(a)->index - a->index);
+		if(a->target->above_median)
+		{
+			push_cost_b = a->target->index;
+			printf("a target index %d \n", push_cost_b );
+		}
+		else //(!(a->target->above_median))
+		{
+			push_cost_b = (lstlast_ps(b)->index - a->target->index);
+			printf("b target index %d \n", push_cost_b);
+		}
+		if(a->above_median == a->target->above_median)
+		{
+			if(push_cost_a > push_cost_b)
+				a->push_cost = push_cost_a;
+			else
+			{
+				a->push_cost = push_cost_b;	
+				printf(" a->push-cost %d \n", a->push_cost);
+			}
+		}
+		else
+		{
+			a->push_cost = push_cost_a + push_cost_b;
+			printf("else  a->push-cost %d \n", a->push_cost);
+		}
+		//printf("push_cost a %d , push cost in node a %d , node Nbr %d \n",push_cost_a, a->push_cost, a->data);
+		// printf("push_cost b %d , push cost in node b %d \n",push_cost_b, b->push_cost);
+		a = a->next;
 	}
 }
 

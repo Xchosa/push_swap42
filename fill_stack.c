@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 15:18:55 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:42:39 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	give_index_and_median(t_stack **stack)
 	while(*stack != NULL)
 	{
 		(*stack)->index = i;
-		if(i <= median)
-			(*stack)->above_median = false;
-		else
+		if(i < median)
 			(*stack)->above_median = true;
+		else
+			(*stack)->above_median = false;
 		stack = &((*stack)->next);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 12:03:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:21:28 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int main(int argc, char **argv)
 		// lstiter_ps(a, del);
 		return(EXIT_FAILURE);
 	}
-	printf("Stack A before: \n");
-	lstiter_ps(a, print_content);
+	// printf("Stack A before: \n");
+	// lstiter_ps(a, print_content);
 	printf("\n");
 	
 	chose_sorting(&a,&b);

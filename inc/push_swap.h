@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 11:42:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:01:57 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	move_cheapest_to_top_above_and_below_median_(t_stack **a, t_stack **b, t_st
 void	print_content_targetnode(t_stack *data);
 void	print_content_above_median(t_stack *data);
 void	print_content_targetnode_cheapest (t_stack *data);
+void	print_content_plain(t_stack *data);
 
 //Sort Algo (in fill.stack)
 void	sorting_more(t_stack **a, t_stack **b);

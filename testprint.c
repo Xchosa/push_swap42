@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 11:28:07 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 15:41:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:20:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	print_content_targetnode(t_stack *data)
 {
-	ft_printf("data: %d | index:  %d  || targetnode stack b %d " ,data->data, data->index, data->target->data);
+	ft_printf("data: %d | index:  %d  || targetnode stack b %d  | push_cost %d   |" ,data->data, data->index, data->target->data, data->push_cost);
 	if (!(data->above_median))
 		ft_printf("above_median false | \n");
 	if (data->above_median)
@@ -52,4 +52,9 @@ void	print_content(t_stack *data)
 	if((data->cheapest))
 		ft_printf("cheapest true\n");
 	
+}
+
+void	print_content_plain(t_stack *data)
+{
+	ft_printf("data: %d | index:  %d \n" ,data->data, data->index);
 }

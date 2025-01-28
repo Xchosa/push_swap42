@@ -6,23 +6,23 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 11:44:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:08:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
+// choose function either to rotate or rev rotate or mixed
 void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
 	if(cheapest_node_a->above_median && cheapest_node_a->target->above_median)
 		move_cheapest_to_top_above_median(a, b, cheapest_node_a);
-	if(cheapest_node_a->above_median && !(cheapest_node_a->target->above_median))
-		
-	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
-
 	if(!(cheapest_node_a->above_median) && !(cheapest_node_a->target->above_median))
-	
-	
+		move_cheapest_to_top_below_median(a, b, cheapest_node_a);
+	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
+		move_cheapest_to_top_below_and_above_median(a,b,cheapest_node_a );
+	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
+		move_cheapest_to_top_below_and_above_median(a, b, cheapest_node_a);
 	ft_push_pa(a,b);
 }
 
@@ -30,7 +30,7 @@ void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 // steps onl for a and steps only for b needed 
 
 // both above median
-void move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a )
+void move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
 	int pushcost_a;
 	int pushcost_b;
@@ -54,4 +54,65 @@ void move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheape
 		pushcost_b--;
 	}
 }
-
+// both nodes below median , reverse rotate
+void move_cheapest_to_top_below_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a )
+{
+	int pushcost_a;
+	int pushcost_b;
+	pushcost_a = cheapest_node_a->push_cost;
+	pushcost_b = cheapest_node_a->target->push_cost;
+	while(pushcost_a != 0 && pushcost_b != 0)
+	{
+		ft_rotate_rrr(a,b);
+		pushcost_a--;
+		pushcost_b--;
+	}
+	while (pushcost_a != 0)
+	{
+		ft_rotate_rra(a);
+		pushcost_a--;
+	}
+	while (pushcost_b != 0)
+	{
+		ft_rotate_rrb(b);
+		pushcost_b--;
+	}
+}
+// a node is below median , target node in b is above median
+void	move_cheapest_to_top_below_and_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a )
+{
+	int pushcost_a;
+	int pushcost_b;
+	
+	pushcost_a = cheapest_node_a->push_cost;
+	pushcost_b = cheapest_node_a->target->push_cost;
+	while (pushcost_a != 0)
+	{
+		ft_rotate_rra(a);
+		pushcost_a--;
+	}
+	while (pushcost_b != 0)
+	{
+		ft_rotate_rb(b);
+		pushcost_b--;
+	}
+}
+// a node is above median , target node in b is below median
+void	move_cheapest_to_top_above_and_below_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a )
+{
+	int pushcost_a;
+	int pushcost_b;
+	
+	pushcost_a = cheapest_node_a->push_cost;
+	pushcost_b = cheapest_node_a->target->push_cost;
+	while (pushcost_a != 0)
+	{
+		ft_rotate_ra(a);
+		pushcost_a--;
+	}
+	while (pushcost_b != 0)
+	{
+		ft_rotate_rrb(b);
+		pushcost_b--;
+	}
+}
