@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 10:55:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:42:25 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	turkswapsorting(t_stack **a,t_stack **b);
 void	sort_2_descending(t_stack **b);
 void	target_of_a_in_stack_b(t_stack **a, t_stack **b);
 void	calc_push_cost_in_a(t_stack *a, t_stack *b);
-t_stack *find_a_node_for_cheapest_move(t_stack **a, t_stack **b);
+t_stack *find_a_node_for_cheapest_move(t_stack **a);
 void	reset_cheapest(t_stack *cheapest);
 void	cost_to_move_node_to_top(t_stack *a, t_stack *b, t_stack *cheapest_node_a);
 

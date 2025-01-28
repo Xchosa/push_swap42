@@ -6,13 +6,13 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 10:57:21 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:44:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-void chose_rotae_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
+void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
 	if(cheapest_node_a->above_median && cheapest_node_a->target->above_median)
 		move_cheapest_to_top_above_median(a, b, cheapest_node_a);
