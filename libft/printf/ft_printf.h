@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:06:07 by poverbec          #+#    #+#             */
-/*   Updated: 2024/11/02 17:12:08 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:00:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-
-# include <stdio.h>
 
 int	ft_printf(const char *format, ...);
 int	ft_putnbr_pr(int n);

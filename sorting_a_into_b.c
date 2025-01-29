@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 14:20:59 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:42:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,22 @@ void	chose_sorting(t_stack **a, t_stack **b)
 
 
 // sort to stack B. Higgehst Nr on top.
- 
 void turkswapsorting(t_stack **a,t_stack **b)
 {
 	t_stack *cheapestnode_a;
 	
-	ft_push_pb(a, b);
-	ft_push_pb(a, b);
+	ft_push_pa(a, b);
+	ft_push_pa(a, b);
 	sort_2_descending(b);
-	while(lstsize_ps(*a) > 3 )
+	while(lstsize_ps(*a) >= 1 )
 	{
 		give_index_and_median(a);
 		give_index_and_median(b); // reset index, median, 
-		//testing
-		printf("Stack A bevor algo \n");
-		lstiter_ps(*a, print_content);
-		printf("\n Stack B bevor algo \n");
-		lstiter_ps(*b, print_content);
-		
 		target_of_a_in_stack_b(a,b);// nodes in a get a target node in b// works
-	// while loop until stack a = 3 
-		printf("\n Stack A Push_cost \n");
-		lstiter_ps(*a, print_content_above_median);// give all cheapest to false 
-		printf("\n Stack B before algo \n \n");
-		lstiter_ps(*b, print_content);
-
-		
+		// printf("\n Stack A Push_cost \n");
+		// lstiter_ps(*a, print_content_above_median);// give all cheapest to false 
+		// printf("\n Stack B before algo \n \n");
+		// lstiter_ps(*b, print_content);
 		calc_push_cost_in_a(*a, *b);
 		// printf("\n Stack A Push_cost \n");
 		// lstiter_ps(*a, print_content_targetnode);
@@ -71,44 +61,50 @@ void turkswapsorting(t_stack **a,t_stack **b)
 		// ft_printf("cheapest node \n pushcost: %d | index:  %d  | data : %d \n" ,cheapestnode_a->push_cost, cheapestnode_a->index, cheapestnode_a->data);
 
 		chose_rotate_command(a,b, cheapestnode_a); // functions to rotate or rev rotate
-	
-		// printf("\n Stack A  \n");
-		// lstiter_ps(*a, print_content_plain);
-		// printf("\n Stack B with one more \n");
-		// lstiter_ps(*b, print_content_plain);
+		// ft_printf("sorting a to b\n");
+		// lstiter_ps(*b, print_content);
 	}
-	sort_three(a);
-	// while(lstsize_ps(*b) > 0)
+	while(lstsize_ps(*b) >= 1)
+	{
+		ft_push_pb(a,b);
+	}
+	
+	// return;
+	// sort_three(a);
+	// ft_printf("bevor sorting back \n");
+	// ft_printf("stack b done \n");
+	// lstiter_ps(*b, print_content);
+	// ft_printf("stack a done \n");
+	// lstiter_ps(*a, print_content);
+	
+	// int i = 3; // testing
+	// while(lstsize_ps(*b) > 0 && i >  0)
 	// {
-		
-		
+	// give_index_and_median(a);
+	// give_index_and_median(b);
+	// ft_printf("stack a\n");
+	// lstiter_ps(*a, print_content);
+	// printf("\n Stack B back to A\n \n");
+	// lstiter_ps(*b, print_content);
+	// ft_printf("done\n");
+	// // 	lstiter_ps(*b, print_content_above_median_for_b);
+	// target_of_b_in_stack_a(a,b);
+	// 	i--;
 	// }
 
 
-	printf("\n Stack A  \n");
-	lstiter_ps(*a, print_content_plain);
-	printf("\n Stack B with one more \n");
-	lstiter_ps(*b, print_content_plain);
+	// printf("\n Stack A  \n");
+	// lstiter_ps(*a, print_content_plain);
+	// printf("\n Stack B with one more \n");
+	// lstiter_ps(*b, print_content_plain);
 	// printf("Stack A median \n");
 	// lstiter_ps(*a, print_content_above_median);
 	// printf("Stack B median \n");
 	// lstiter_ps(*b, print_content_above_median);
-
-	// // int push_costs = calc_steps_for_cheapest_move(a, b); // cheapest in stack b is marked "cheapest true"
-	// printf("Stack B cheapest\n");
-	// lstiter_ps(*b, print_content_targetnode_cheapest);
-	
-	// printf("Stack B reset cheapest\n");
-	// lstiter_ps(*b, reset_cheapest);
-	// lstiter_ps(*b, print_content_targetnode_cheapest);
-	
-	
-	
-	
-	// pushing back b to a. 
-	// rotate until closet higher nr on top of a,
-	// pb from b to a. 
 }
+
+// ARG=" 9 8 7 6 5 4 3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG
+
 // find target node for every a node in stack b
 // target = closest smaller Num in stack b;
 // if no smaller Num found , target node in a stack will be the biggest nbr in stack b

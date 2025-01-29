@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 15:35:24 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:32:23 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void ft_push_pa(t_stack **a, t_stack **b)
 	}
 }
 
-void ft_push_pb(t_stack **b, t_stack **a)
+void ft_push_pb(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
 	if(*b == NULL)

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 14:27:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:19:02 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 // choose function either to rotate or rev rotate or mixed
 void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
-	ft_printf("---------Rotation------------------- \n\n");
-	ft_printf("\n cheapest node a  pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->push_cost, cheapest_node_a->data);
-	ft_printf("\n cheapest node b   pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->target->push_cost, cheapest_node_a->target->data);
+	// ft_printf("---------Rotation------------------- \n\n");
+	// ft_printf("\n cheapest node a  pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->push_cost, cheapest_node_a->data);
+	// ft_printf("\n cheapest node b   pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->target->push_cost, cheapest_node_a->target->data);
 	
 	if(cheapest_node_a->above_median && cheapest_node_a->target->above_median)
 		move_cheapest_to_top_above_median(a, b, cheapest_node_a);
@@ -28,8 +28,6 @@ void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
 		move_cheapest_to_top_below_and_above_median(a, b, cheapest_node_a);
 	ft_push_pa(a,b);
-	ft_printf("before rotating stack to top\n");
-	lstiter_ps(*b, print_content);
 	rotate_until_max_on_top(b);
 }
 
@@ -39,10 +37,21 @@ void rotate_until_max_on_top(t_stack **b)
 	t_stack *max_nbr;
 	give_index_and_median(b);
 	max_nbr = get_max_nbr_totalstack(b);
-	while(max_nbr->index != 0)
+	if(!max_nbr->above_median)
 	{
-		ft_rotate_rrb(b);
-		give_index_and_median(b);
+		while(max_nbr->index != 0)
+		{
+			ft_rotate_rrb(b);
+			give_index_and_median(b);
+		}
+	}
+	else
+	{
+		while(max_nbr->index != 0)
+		{
+			ft_rotate_rb(b);
+			give_index_and_median(b);
+		}
 	}
 }
 

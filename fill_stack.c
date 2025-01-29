@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 11:38:37 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:45:16 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,24 @@ void	give_index_and_median(t_stack **stack)
 {
 	int i;
 	int median;
-	t_stack *head;
+	t_stack *current;
 	
-	head = *stack;
+	current = *stack;
 	i = 0;
 	if(stack == NULL || *stack == NULL)
 		return;
 	median = (lstsize_ps(*stack) / 2);
-	while(*stack != NULL)
+	while(current != NULL)
 	{
-		(*stack)->index = i;
+		(current)->index = i;
 		if(i < median)
-			(*stack)->above_median = true;
+			(current)->above_median = true;
 		else
-			(*stack)->above_median = false;
-		stack = &((*stack)->next);
+			(current)->above_median = false;
+		current = current->next;
 		i++;
 	}
-	stack = &head;
+	return;
 }
 
 void	sort_2_descending(t_stack **b)

@@ -54,21 +54,23 @@ MY_SOURCES_PF = printf/ft_printf_func.c \
 			printf/ft_printf_func2.c \
 			printf/ft_printf.c \
 
+MY_SOURCES_GNL = get_next_line/get_next_line_bonus.c \
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 MY_OBJECTS_B = $(MY_SOURCES_B:.c=.o)
 MY_OBJECTS_PF = $(MY_SOURCES_PF:.c=.o)
+MY_OBJECTS_GNL = $(MY_SOURCES_GNL:.c=.o)
 
 # %.o: %.c
 # 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
-	$(AR) -rcs $(NAME) $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
+$(NAME): $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF) $(MY_OBJECTS_GNL)
+	$(AR) -rcs $(NAME) $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF) $(MY_OBJECTS_GNL)
 
 clean: 
-	rm -f $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF)
+	rm -f $(MY_OBJECTS) $(MY_OBJECTS_B) $(MY_OBJECTS_PF) $(MY)
 
 fclean: clean 
 	rm -f $(NAME)
