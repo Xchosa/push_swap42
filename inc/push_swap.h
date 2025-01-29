@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 15:01:57 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:28:02 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 	int			index;
 	int			push_cost;
 	bool		above_median;
-	bool		cheapest;
+	// bool		cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
 }	t_stack;
@@ -46,7 +46,7 @@ int		check_duplicates(t_stack **stack);
 void	give_index_and_median(t_stack **stack);
 void	print_content(t_stack *data);
 
-// sorting msall 
+// sorting small 
 bool	check_order(t_stack **a);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
@@ -69,7 +69,9 @@ void	chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a);
 void	move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
 void	move_cheapest_to_top_below_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
 void	move_cheapest_to_top_below_and_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
-void	move_cheapest_to_top_above_and_below_median_(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
+void	move_cheapest_to_top_above_and_below_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
+void 	rotate_until_max_on_top(t_stack **b);
+
 
 //testing
 void	print_content_targetnode(t_stack *data);

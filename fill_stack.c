@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:41:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/28 15:42:39 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:38:37 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,24 +132,27 @@ void calculate_cost(t_stack **a, t_stack **b)
 	}
 }
 
-void	find_cheapest_node(t_stack **stack)
-{
-	long	cheapest_data;
-	t_stack	*cheapest_node;
-	cheapest_data = LONG_MAX;
+// void	find_cheapest_node(t_stack **stack)
+// {
+// 	long	cheapest_data;
+// 	t_stack	*cheapest_node;
+// 	cheapest_data = LONG_MAX;
 	
-	while ((*stack)->next != NULL)
-	{
-		if((*stack)->push_cost < cheapest_data)
-		{
-			cheapest_data = (*stack)->push_cost;
-			cheapest_node = *stack;
-		}
-		stack = &((*stack)->next);
-	}
-	cheapest_node->cheapest = true;
-	
-}
+// 	while ((*stack)->next != NULL)
+// 	{
+// 		if((*stack)->push_cost < cheapest_data)
+// 		{
+// 			cheapest_data = (*stack)->push_cost;
+// 			cheapest_node = *stack;
+// 		}
+// 		stack = &((*stack)->next);
+// 	}
+// 	cheapest_node->cheapest = true;
+
+
+
+
+// }
 
 // void fill_nodes_a(t_stack **a, t_stack **b)
 // {

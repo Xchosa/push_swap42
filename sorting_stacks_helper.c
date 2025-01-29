@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:16:19 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/27 16:33:33 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:39:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,22 @@
 // 	give_index(b);
 // 	smallest_on_top_a(a);
 // }
-// find the boolean, value of the cheapest node 
-t_stack	*pointer_to_cheapest_node(t_stack **stack)
-{
-	if(stack == NULL)
-		return(NULL);
-	while((*stack)->next != NULL)
-	{
-		if((*stack)->cheapest)
-			return (*stack);
-		(*stack) = (*stack)->next;
-	}
-	return (NULL);
-}
+
+
+
+// // find the boolean, value of the cheapest node 
+// t_stack	*pointer_to_cheapest_node(t_stack **stack)
+// {
+// 	if(stack == NULL)
+// 		return(NULL);
+// 	while((*stack)->next != NULL)
+// 	{
+// 		if((*stack)->cheapest)
+// 			return (*stack);
+// 		(*stack) = (*stack)->next;
+// 	}
+// 	return (NULL);
+// }
 
 void	 smallest_on_top_a(t_stack **a)
 {
@@ -141,7 +144,7 @@ t_stack *get_min_nbr_totalstack(t_stack **stack)
 	return(min_nbr);
 }
 
-void reset_cheapest(t_stack *stack)
-{
-	stack->cheapest = false;
-}
+// void reset_cheapest(t_stack *stack)
+// {
+// 	stack->cheapest = false;
+// }
