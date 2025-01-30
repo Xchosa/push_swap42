@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 12:37:18 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 14:47:29 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ int main(int argc, char **argv)
 	parse_result = start_parse(argc, argv, &a);
 	if(parse_result == EXIT_FAILURE )
 	{
-		ft_printf("ERROR\n");
+		if (a != NULL)
+			free_stack(&a);
+		ft_printf("Error\n");
 		return(EXIT_FAILURE);
 	}
-	if(!(&check_order))
+	if((check_order(&a)== 1 || lstsize_ps(a) == 1))
 	{
-		lstiter_ps(a, print_content);
+		free_stack(&a);
+		// lstiter_ps(a, print_content);
 		return(EXIT_SUCCESS);
 	}
-	else
-	// printf("Stack A before: \n");
-	// lstiter_ps(a, print_content);
 	chose_sorting(&a,&b);
-
-	// printf("Stack A after: \n");
-	// lstiter_ps(a, print_content);
 	return(EXIT_SUCCESS);
 }
-
+// printf("Stack A after: \n");
+// lstiter_ps(a, print_content);
+// printf("Stack A before: \n");
+// lstiter_ps(a, print_content);
 
 // void del( t_stack *data)
 // {

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 12:16:52 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 14:39:22 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	move_cheapest_to_top_below_median(t_stack **a, t_stack **b, t_stack *cheape
 void	move_cheapest_to_top_below_and_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
 void	move_cheapest_to_top_above_and_below_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a );
 void 	rotate_until_max_on_top(t_stack **b);
+void	free_stack(t_stack **stack);
 
 
 // moving sorted stack b back to a
@@ -83,26 +84,11 @@ void	print_content_targetnode_cheapest (t_stack *data);
 void	print_content_plain(t_stack *data);
 void	print_content_above_median_for_b(t_stack *data);
 
-//Sort Algo (in fill.stack)
-void	sorting_more(t_stack **a, t_stack **b);
-void	fill_nodes_a(t_stack **a, t_stack **b);
-void	fill_nodes_b(t_stack **a, t_stack **b);
+
+
 t_stack *get_max_nbr_totalstack(t_stack **stack);
 t_stack *get_min_nbr_totalstack(t_stack **stack);
-void	set_target(t_stack **a, t_stack **b);
-void	find_cheapest_node(t_stack **stack);
-void	set_target(t_stack **a, t_stack **b);
-void	set_target_biggest_nbr(t_stack **a, t_stack **b);
-void 	calculate_cost(t_stack **a, t_stack **b);
-t_stack	*pointer_to_cheapest_node(t_stack **stack);
-void	a_stack_to_b_stack (t_stack **a, t_stack **b);
-void	b_stack_to_a_stack(t_stack **a, t_stack **b);
 void	smallest_on_top_a(t_stack **a);
-
-void	rev_rotate_a_b_to_top(t_stack **a, t_stack **b, t_stack *cheapest_node);
-void	rotate_a_b_to_top(t_stack **a, t_stack **b, t_stack *cheapest_node);
-void	rotate_a_until_cheapest_on_top(t_stack **a, t_stack *cheapest_node);
-void	rotate_b_until_cheapest_on_top(t_stack **b, t_stack *cheapest_node);
 
 
 // list_push_swap

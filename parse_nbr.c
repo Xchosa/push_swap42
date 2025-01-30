@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 09:30:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 14:50:47 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,14 @@ int parse_data(char *data, t_stack **a)
 
 	i = 0;	
 	split_nbr = ft_split(data, ' ');
-	
 	while(split_nbr[i] != NULL)
 	{
 		nbr = ft_atol(split_nbr[i]);
-		if(nbr < INT_MIN || nbr > INT_MAX)
-		{
-			ft_printf("INT_MIN: %d", nbr);
+		if(nbr == LONG_MIN || nbr < INT_MIN || nbr > INT_MAX)
 			return(EXIT_FAILURE);
-		}
 		stack_lst = lstnew_ps(nbr);
 		if(!stack_lst)
-		{
-			ft_printf("failed stack: %d", nbr);
 			return(EXIT_FAILURE);
-		}
 		if(*a == NULL)
 			*a = stack_lst;
 		else
@@ -57,24 +50,18 @@ int parse_data(char *data, t_stack **a)
 int parse_data_multiple_arg(char **argv, t_stack **a )
 {	
 	int		i;
-	int		nbr;
+	long	nbr;
 	t_stack *stack_lst;
 
 	i = 0;
 	while (argv[i] != NULL)
 		{	
 			nbr = ft_atol(argv[i]);
-			if(nbr < INT_MIN || nbr > INT_MAX)
-			{
-			ft_printf("INT_MIN: %d", nbr);
-			return(EXIT_FAILURE);
-			}
+			if(nbr == LONG_MIN || nbr < INT_MIN || nbr > INT_MAX )
+				return(EXIT_FAILURE);
 			stack_lst = lstnew_ps(nbr);
 			if(!stack_lst)
-			{
-				ft_printf("failed stack: %d", nbr);
 				return(EXIT_FAILURE);
-			}
 			if(*a == NULL)
 				*a = stack_lst;
 			else
@@ -109,23 +96,36 @@ int	check_duplicates(t_stack **stack)
 {
 	t_stack *current;
 	t_stack *check;
+
 	current = *stack;
-	check = current->next;
-	
 	
 	while(current->next != NULL)
 	{
-		while(check->next != NULL)
+		check = current->next;
+		while(check != NULL)
 		{
 			if(current->data == check->data)
 			{
 				return(EXIT_FAILURE);
 			}
-			else
-				check  = check->next;
+			check  = check->next;
 		}
 		current = current->next;
-		check = current->next;
 	}
 	return(EXIT_SUCCESS);
+}
+
+void free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+	
+	if(*stack == NULL)
+		return;
+	while(*stack != NULL)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }

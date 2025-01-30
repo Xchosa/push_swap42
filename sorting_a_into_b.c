@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 12:33:38 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:04:10 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,42 +19,54 @@ void	chose_sorting(t_stack **a, t_stack **b)
 {
 	if (lstsize_ps(*a) <= 5)
 	{
-		if(lstsize_ps(*a) == 2)
+		if (lstsize_ps(*a) == 2)
 			sort_two(a);
-		if(lstsize_ps(*a) == 3)
+		if (lstsize_ps(*a) == 3)
 			sort_three(a);
-		if(lstsize_ps(*a) == 4)
+		if (lstsize_ps(*a) == 4)
 			sort_four(a, b);
-		if(lstsize_ps(*a) == 5)
+		if (lstsize_ps(*a) == 5)
 			sort_five(a, b);
-		return;
+		return ;
 	}
 	else
+	{
 		turkswapsorting(a, b);
+	}
 }
+/*
+sort to stack B. Higgehst Nr on top.
+pushing first two nbr to stack b
+giving both stacks an index and group each ofthem in above median and below
+calculate a targetnode for each nbr of stack a in stack b. 
+identify the cheapest nbr, which has the fewest steps 
+bring to it's targetnode.
+calculate the shortest step to bring the cheapest node to the top 
+(pushcost of cheapestnode)
+and calculate seperately the steps to bring targetnode of b to top of stack
+rotate and push
+giving index and median again and repeat
+*/
 
-
-// sort to stack B. Higgehst Nr on top.
-void turkswapsorting(t_stack **a,t_stack **b)
+void	turkswapsorting(t_stack **a,t_stack **b)
 {
-	t_stack *cheapestnode_a;
-	
+	t_stack	*cheapestnode_a;
+
 	ft_push_pb(a, b);
 	ft_push_pb(a, b);
 	sort_2_descending(b);
-	while(lstsize_ps(*a) > 3 )
+	while (lstsize_ps(*a) > 3 )
 	{
 		give_index_and_median(a);
-		give_index_and_median(b); // reset index, median, 
-		target_of_a_in_stack_b(a,b);// nodes in a get a target node in b// works
+		give_index_and_median(b);
+		target_of_a_in_stack_b(a,b);
 		calc_push_cost_in_a(*a, *b);
-		cheapestnode_a = find_a_node_for_cheapest_move(a);// cheapest node + its target node
+		cheapestnode_a = find_a_node_for_cheapest_move(a);
 		cost_to_move_node_to_top(*a, *b, cheapestnode_a);
-
-		chose_rotate_command(a,b, cheapestnode_a); // functions to rotate or rev rotate
+		chose_rotate_command(a,b,cheapestnode_a);
 	}
 	sort_three(a);
-	while(lstsize_ps(*b) >= 1 )
+	while (lstsize_ps(*b) >= 1 )
 	{
 		give_index_and_median(a);
 		give_index_and_median(b);
@@ -62,6 +74,7 @@ void turkswapsorting(t_stack **a,t_stack **b)
 		moving_b_node_to_target_b(a,b);
 		ft_push_pa(a,b);
 	}
+	free_stack(a);
 }
 
 // ARG=" 9 8 7 6 5 4 3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG
