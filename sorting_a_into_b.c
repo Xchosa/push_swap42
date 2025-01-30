@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 10:37:54 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 15:04:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:33:22 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	turkswapsorting(t_stack **a,t_stack **b)
 		moving_b_node_to_target_b(a,b);
 		ft_push_pa(a,b);
 	}
-	free_stack(a);
 }
 
 // ARG=" 9 8 7 6 5 4 3 2 1"; ./push_swap $ARG | ./checker_Mac $ARG

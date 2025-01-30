@@ -6,35 +6,37 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 11:45:13 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:42:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
 // choose function either to rotate or rev rotate or mixed
-void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
+void	chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheap_a)
 {
-	if(cheapest_node_a->above_median && cheapest_node_a->target->above_median)
-		move_cheapest_to_top_above_median(a, b, cheapest_node_a);
-	if(!(cheapest_node_a->above_median) && !(cheapest_node_a->target->above_median))
-		move_cheapest_to_top_below_median(a, b, cheapest_node_a);
-	if((cheapest_node_a->above_median) && !(cheapest_node_a->target->above_median))
-		move_cheapest_to_top_above_and_below_median(a,b,cheapest_node_a );
-	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
-		move_cheapest_to_top_below_and_above_median(a, b, cheapest_node_a);
-	ft_push_pb(a,b);
+	if (cheap_a->above_median && cheap_a->target->above_median)
+		move_cheapest_to_top_above_median(a, b, cheap_a);
+	if (!(cheap_a->above_median) && !(cheap_a->target->above_median))
+		move_cheapest_to_top_below_median(a, b, cheap_a);
+	if ((cheap_a->above_median) && !(cheap_a->target->above_median))
+		move_cheapest_to_top_above_and_below_median(a, b, cheap_a);
+	if (!(cheap_a->above_median) && (cheap_a->target->above_median))
+		move_cheapest_to_top_below_and_above_median(a, b, cheap_a);
+	ft_push_pb(a, b);
 	rotate_until_max_on_top(b);
 }
 
-void rotate_until_max_on_top(t_stack **b)
+void	rotate_until_max_on_top(t_stack **b)
 {
-	t_stack *max_nbr;
+	t_stack	*max_nbr;
+
 	give_index_and_median(b);
+
 	max_nbr = get_max_nbr_totalstack(b);
-	if(!max_nbr->above_median)
+	if (!max_nbr->above_median)
 	{
-		while(max_nbr->index != 0)
+		while (max_nbr->index != 0)
 		{
 			ft_rotate_rrb(b);
 			give_index_and_median(b);
@@ -42,7 +44,7 @@ void rotate_until_max_on_top(t_stack **b)
 	}
 	else
 	{
-		while(max_nbr->index != 0)
+		while (max_nbr->index != 0)
 		{
 			ft_rotate_rb(b);
 			give_index_and_median(b);
@@ -54,18 +56,18 @@ void rotate_until_max_on_top(t_stack **b)
 // steps onl for a and steps only for b needed 
 
 // both above median
-void move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
+void	move_cheapest_to_top_above_median(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
-	int pushcost_a;
-	int pushcost_b;
+	int	pushcost_a;
+	int	pushcost_b;
 	pushcost_a = cheapest_node_a->push_cost;
 	pushcost_b = cheapest_node_a->target->push_cost;
 	
-	while(pushcost_a != 0 && pushcost_b != 0)
+	while (pushcost_a != 0 && pushcost_b != 0)
 	{
 		ft_rotate_rr(a,b);
 		pushcost_a--;
-		pushcost_b--;		
+		pushcost_b--;
 	}
 	while (pushcost_a != 0)
 	{

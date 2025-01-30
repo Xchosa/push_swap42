@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 09:46:47 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:07:13 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void ft_rotate_ra (t_stack **a)
 {
 	t_stack *head;
 	t_stack *last;
-	// t_stack *prelastnode;
+
 	head = *a;
 	last = lstlast_ps(*a);
-	// if(print == 1 )
+
 	ft_printf("ra\n");
 	*a = head->next;
 	last->next = head;
@@ -79,7 +79,7 @@ void ft_rotate_rb (t_stack **b)
 	t_stack *last;
 	head = *b;
 	last = lstlast_ps(*b);
-	// if(print = 1)
+
 	ft_printf("rb\n");
 	*b = head->next;
 	last->next = head;
@@ -92,7 +92,7 @@ void	ft_rotate_rr(t_stack **a, t_stack **b)
 {
 	t_stack *head;
 	t_stack *last;
-	
+
 	head = *a;
 	last = lstlast_ps(*a);
 	*a = head->next;
@@ -117,11 +117,11 @@ void	ft_rotate_rra(t_stack **a)
 	
 	if( (*a == NULL ) || ((*a)->next == NULL))
 		return;
-		
+
 	head = *a;
 	lastnode = lstlast_ps(*a);
 	second_last = *a;
-	
+
 	while(second_last->next->next != NULL)
 	{
 		second_last = second_last->next;

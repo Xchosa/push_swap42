@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 14:39:22 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:39:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	target_of_a_in_stack_b(t_stack **a, t_stack **b);
 void	calc_push_cost_in_a(t_stack *a, t_stack *b);
 t_stack *find_a_node_for_cheapest_move(t_stack **a);
 void	reset_cheapest(t_stack *cheapest);
-void	cost_to_move_node_to_top(t_stack *a, t_stack *b, t_stack *cheapest_node_a);
+void	cost_to_move_node_to_top(t_stack *a, t_stack *b, t_stack *cheap_a);
 
 //Algo moving stack
 void	chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a);
