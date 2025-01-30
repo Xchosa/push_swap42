@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/21 14:16:46 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 09:30:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ int	check_duplicates(t_stack **stack)
 		{
 			if(current->data == check->data)
 			{
-				ft_printf("doubble");
 				return(EXIT_FAILURE);
 			}
 			else

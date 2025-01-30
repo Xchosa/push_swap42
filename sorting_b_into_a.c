@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:01:20 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 16:08:55 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:35:25 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,39 @@ void target_of_b_in_stack_a(t_stack **a, t_stack **b)
 			{
 				if ((current_a)->data - (current_b)->data < smallest_differents)
 				{
-					smallest_differents = (current_a)->data - (current_a)->data ;
+					smallest_differents = (current_a)->data - (current_b)->data ;
 					(current_b)->target = current_a;
 				}
 			}
 			current_a = current_a->next;
 		}
 		if (smallest_differents == INT_MAX)
-			(current_a)->target = get_min_nbr_totalstack(b);
+			(current_b)->target = get_min_nbr_totalstack(a);
 		current_b = current_b->next;
-	ft_printf(" target node of a stack %d in b %d \n", current_a->data, current_b->target);
 	}
 }
-
+void moving_b_node_to_target_b(t_stack **a, t_stack **b)
+{
+	int i;
+	if((*b)->target->above_median)
+	{
+		i = ((*b)->target->index);
+		while (i > 0)
+		{
+			ft_rotate_ra(a);
+			i--;
+		}
+	}
+	else 
+	{
+		i = lstsize_ps(*a) - ((*b)->target->index);
+		while (i > 0)
+		{
+			ft_rotate_rra(a);
+			i--;
+		}
+	}
+}
 
 void	 smallest_on_top_a(t_stack **a)
 {

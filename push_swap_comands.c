@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 16:32:23 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 09:46:47 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,24 @@
 // turk sort ab bestimmter groeser, davor anderer sort
 // am besten combinieren. 
 
-//pb (push b): Take the first element at the top of a and put it at the top of b.
+//pa (push a): Take the first element at the top of b and put it at the top of a.
+//Do nothing if b is empty.
 void ft_push_pa(t_stack **a, t_stack **b)
+{
+	t_stack *tmp;
+	if(*a == NULL)
+		return;
+	else
+	{
+		tmp = *b;
+		*b = (*b)->next;
+		lstadd_front_ps(a, tmp);
+		ft_printf("pa\n");
+	}
+}
+// pb (push b): Take the first element at the top of a and put it at the top of b.
+//Do nothing if a is empty.
+void ft_push_pb(t_stack **a, t_stack **b)
 {
 	t_stack *tmp;
 	if(*a == NULL)
@@ -37,20 +53,6 @@ void ft_push_pa(t_stack **a, t_stack **b)
 		tmp = *a;
 		*a = (*a)->next;
 		lstadd_front_ps(b, tmp);
-		ft_printf("pa\n");
-	}
-}
-
-void ft_push_pb(t_stack **a, t_stack **b)
-{
-	t_stack *tmp;
-	if(*b == NULL)
-		return;
-	else
-	{
-		tmp = *b;
-		*b = (*b)->next;
-		lstadd_front_ps(a, tmp);
 		ft_printf("pb\n");
 	}
 }

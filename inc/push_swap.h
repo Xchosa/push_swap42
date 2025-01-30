@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 14:58:50 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 12:16:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 # include "../libft/printf/ft_printf.h"
+# include "../libft/get_next_line/get_next_line_bonus.h"
 # include <limits.h>
 # include <stdbool.h>
 
@@ -25,12 +26,10 @@
 
 typedef struct s_stack
 {
-	// bool		is_a;
 	int			data;
 	int			index;
 	int			push_cost;
 	bool		above_median;
-	// bool		cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
 }	t_stack;
@@ -75,6 +74,7 @@ void 	rotate_until_max_on_top(t_stack **b);
 
 // moving sorted stack b back to a
  void	target_of_b_in_stack_a(t_stack **a, t_stack **b);
+ void	moving_b_node_to_target_b(t_stack **a, t_stack **b);
 
 //testing
 void	print_content_targetnode(t_stack *data);

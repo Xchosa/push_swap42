@@ -2,3 +2,6 @@
 **/*.out
 **/*main
 checker_Mac
+pro_checker
+push_swap_test.sh
+push_swap_test

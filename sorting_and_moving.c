@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/29 15:19:02 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:45:13 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 // choose function either to rotate or rev rotate or mixed
 void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 {
-	// ft_printf("---------Rotation------------------- \n\n");
-	// ft_printf("\n cheapest node a  pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->push_cost, cheapest_node_a->data);
-	// ft_printf("\n cheapest node b   pushcost: %d |  Zahl : %d \n " ,cheapest_node_a->target->push_cost, cheapest_node_a->target->data);
-	
 	if(cheapest_node_a->above_median && cheapest_node_a->target->above_median)
 		move_cheapest_to_top_above_median(a, b, cheapest_node_a);
 	if(!(cheapest_node_a->above_median) && !(cheapest_node_a->target->above_median))
@@ -27,10 +23,9 @@ void chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheapest_node_a)
 		move_cheapest_to_top_above_and_below_median(a,b,cheapest_node_a );
 	if(!(cheapest_node_a->above_median) && (cheapest_node_a->target->above_median))
 		move_cheapest_to_top_below_and_above_median(a, b, cheapest_node_a);
-	ft_push_pa(a,b);
+	ft_push_pb(a,b);
 	rotate_until_max_on_top(b);
 }
-
 
 void rotate_until_max_on_top(t_stack **b)
 {
@@ -54,9 +49,6 @@ void rotate_until_max_on_top(t_stack **b)
 		}
 	}
 }
-
-
-
 
 // rotate a and b to top
 // steps onl for a and steps only for b needed 
