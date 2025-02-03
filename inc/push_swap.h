@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 16:39:52 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:55:00 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	free_stack(t_stack **stack);
 // moving sorted stack b back to a
  void	target_of_b_in_stack_a(t_stack **a, t_stack **b);
  void	moving_b_node_to_target_b(t_stack **a, t_stack **b);
+void 	rotate_until_min_on_top(t_stack **a);
 
 //testing
 void	print_content_targetnode(t_stack *data);

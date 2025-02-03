@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/01/30 11:49:48 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/03 14:23:31 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ MY_SOURCES = \
 			sorting_small.c \
 			sorting_stacks_helper.c \
 			push_swap_comands.c \
+			push_swap_rev_rotate.c \
 			push_swap_comands_swap.c \
 			testprint.c
 

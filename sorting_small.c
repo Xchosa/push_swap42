@@ -6,16 +6,16 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 12:28:30 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:00:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-void	sort_2_descending(t_stack **a)
+void	sort_2_descending(t_stack **b)
 {
-	if((*a)->data < (*a)->next->data)
-		ft_rotate_ra(a);
+	if((*b)->data < (*b)->next->data)
+		ft_rotate_rb(b);
 	else
 		return;
 }

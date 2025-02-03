@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:15:59 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/22 15:31:32 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:19:33 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,25 @@ void ft_swap_sa(t_stack **a)
 
 	head = *a;
 	second_head = head->next;
-	
+
 	head->next = second_head->next;
 	second_head->next = head;
 	*a = second_head;
-	
-	// if (head->is_a)
-		ft_printf("sa\n");
-	// else
-	// 	ft_printf("sb\n")
+
+	ft_printf("sa\n");
 }
-
-
 
 // sb (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
 // ss : sa and sb at the same time.
 
-void ft_swap_sb(t_stack **b)
+void	ft_swap_sb(t_stack **b)
 {
-	t_stack *head;
-	t_stack *second_head;
+	t_stack	*head;
+	t_stack	*second_head;
 
 	head = *b;
 	second_head = head->next;
-	
+
 	head->next = second_head->next;
 	second_head->next = head;
 	*b = second_head;
@@ -53,8 +48,8 @@ void ft_swap_sb(t_stack **b)
 
 void ft_swap_ss(t_stack **a, t_stack **b)
 {
-	t_stack *head;
-	t_stack *second_head;
+	t_stack	*head;
+	t_stack	*second_head;
 
 	head = *a;
 	second_head = head->next;
@@ -64,7 +59,6 @@ void ft_swap_ss(t_stack **a, t_stack **b)
 
 	head = *b;
 	second_head = head->next;
-	
 	head->next = second_head->next;
 	second_head->next = head;
 	*b = second_head;

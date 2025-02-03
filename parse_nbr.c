@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 14:50:47 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:05:02 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,11 @@ int parse_data_multiple_arg(char **argv, t_stack **a )
 int start_parse(int argc, char **argv, t_stack **a )
 {
 	int 	parse_result;
-	
+
 	if(argc == 2 )
 	{
+		if(argv[1][0] == '\0')
+			return (EXIT_FAILURE);
 		parse_result = parse_data(argv[1] , a);
 		return(parse_result);
 	}

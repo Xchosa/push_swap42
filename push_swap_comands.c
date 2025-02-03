@@ -6,22 +6,12 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 14:44:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 16:07:13 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:24:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-// swapping
-// sa (swap a): Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.
-// sb (swap b): Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.
-// ss : sa and sb at the same time.
-
-
-
-// pushing (top to bottom/ bottom to top)
-
-// rotating 
 
 // turk sort ab bestimmter groeser, davor anderer sort
 // am besten combinieren. 
@@ -56,12 +46,11 @@ void ft_push_pb(t_stack **a, t_stack **b)
 		ft_printf("pb\n");
 	}
 }
-
 //ra (rotate a): Shift up all elements of stack a by 1.
-void ft_rotate_ra (t_stack **a)
+void	ft_rotate_ra (t_stack **a)
 {
-	t_stack *head;
-	t_stack *last;
+	t_stack	*head;
+	t_stack	*last;
 
 	head = *a;
 	last = lstlast_ps(*a);
@@ -73,10 +62,11 @@ void ft_rotate_ra (t_stack **a)
 }
 
 //rb (rotate b): Shift up all elements of stack b by 1. The first element becomes the last one.
-void ft_rotate_rb (t_stack **b)
+void	ft_rotate_rb (t_stack **b)
 {
-	t_stack *head;
-	t_stack *last;
+	t_stack	*head;
+	t_stack	*last;
+
 	head = *b;
 	last = lstlast_ps(*b);
 
@@ -87,11 +77,10 @@ void ft_rotate_rb (t_stack **b)
 }
 
 //rr : ra and rb at the same time.
-
 void	ft_rotate_rr(t_stack **a, t_stack **b)
 {
-	t_stack *head;
-	t_stack *last;
+	t_stack	*head;
+	t_stack	*last;
 
 	head = *a;
 	last = lstlast_ps(*a);
@@ -108,80 +97,3 @@ void	ft_rotate_rr(t_stack **a, t_stack **b)
 	ft_printf("rr\n");
 }
 
-// rra (reverse rotate a): Shift down all elements of stack a by 1.
-void	ft_rotate_rra(t_stack **a)
-{
-	t_stack *head;
-	t_stack *lastnode;
-	t_stack *second_last;
-	
-	if( (*a == NULL ) || ((*a)->next == NULL))
-		return;
-
-	head = *a;
-	lastnode = lstlast_ps(*a);
-	second_last = *a;
-
-	while(second_last->next->next != NULL)
-	{
-		second_last = second_last->next;
-	}
-	second_last->next = NULL;
-	lastnode->next = head;
-	*a = lastnode;
-	ft_printf("rra\n");
-}
-
-// rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.
-
-void	ft_rotate_rrb(t_stack **b)
-{
-	t_stack *head;
-	t_stack *lastnode;
-	t_stack *second_last;
-	
-	if( (*b == NULL ) || ((*b)->next == NULL))
-		return;
-		
-	head = *b;
-	lastnode = lstlast_ps(*b);
-	second_last = *b;
-	
-	while(second_last->next->next != NULL)
-	{
-		second_last = second_last->next;
-	}
-	second_last->next = NULL;
-	lastnode->next = head;
-	*b = lastnode;
-	ft_printf("rrb\n");
-}
-// rrr : rra and rrb at the same time.
-void	ft_rotate_rrr(t_stack **a, t_stack **b)
-{
-	t_stack *head;
-	t_stack *lastnode;
-	t_stack *second_last;
-	
-	if( (*b == NULL ) || ((*b)->next == NULL) || (*b == NULL ) || ((*b)->next == NULL)) 
-		return;
-	head = *b;
-	lastnode = lstlast_ps(*b);
-	second_last = *b;
-	
-	while(second_last->next->next != NULL)
-		second_last = second_last->next;
-	second_last->next = NULL;
-	lastnode->next = head;
-	*b = lastnode;
-
-	head = *a;
-	lastnode = lstlast_ps(*a);
-	second_last = *a;
-	while (second_last->next->next != NULL)
-		second_last = second_last->next;
-	second_last->next = NULL;
-	lastnode->next = head;
-	*a = lastnode;
-	ft_printf("rrr\n");
-}

@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/30 16:42:33 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:51:45 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,45 @@ void	chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheap_a)
 {
 	if (cheap_a->above_median && cheap_a->target->above_median)
 		move_cheapest_to_top_above_median(a, b, cheap_a);
-	if (!(cheap_a->above_median) && !(cheap_a->target->above_median))
+	else if (!(cheap_a->above_median) && !(cheap_a->target->above_median))
 		move_cheapest_to_top_below_median(a, b, cheap_a);
-	if ((cheap_a->above_median) && !(cheap_a->target->above_median))
+	else if ((cheap_a->above_median) && !(cheap_a->target->above_median))
 		move_cheapest_to_top_above_and_below_median(a, b, cheap_a);
-	if (!(cheap_a->above_median) && (cheap_a->target->above_median))
+	else if (!(cheap_a->above_median) && (cheap_a->target->above_median))
 		move_cheapest_to_top_below_and_above_median(a, b, cheap_a);
+	// printf("Stack A after: \n");
+	// lstiter_ps(*a, print_content);
 	ft_push_pb(a, b);
-	rotate_until_max_on_top(b);
+	// printf("Stack B after: \n");
+	// lstiter_ps(*b, print_content);
+	//rotate_until_max_on_top(b);
+	// printf("Stack B after max on top: \n");
+	// lstiter_ps(*b, print_content);
+}
+
+void rotate_until_min_on_top(t_stack **a)
+{
+	t_stack	*min_nbr;
+
+	give_index_and_median(a);
+
+	min_nbr = get_min_nbr_totalstack(a);
+	if (!min_nbr->above_median)
+	{
+		while (min_nbr->index != 0)
+		{
+			ft_rotate_rra(a);
+			give_index_and_median(a);
+		}
+	}
+	else
+	{
+		while (min_nbr->index != 0)
+		{
+			ft_rotate_ra(a);
+			give_index_and_median(a);
+		}
+	}
 }
 
 void	rotate_until_max_on_top(t_stack **b)
