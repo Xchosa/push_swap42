@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/02/04 14:24:25 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/04 17:02:20 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ MY_SOURCES = \
 			push_swap_comands.c \
 			push_swap_rev_rotate.c \
 			push_swap_comands_swap.c \
+			sort_algo.c \
 			testprint.c
+
 MY_SOURCES_BONUS = \
 				checker.c \
 				lstadd_back_ps.c \
@@ -46,12 +48,21 @@ MY_SOURCES_BONUS = \
 				lstlast_ps.c \
 				lstnew_ps.c \
 				lstsize_ps.c \
+				sorting_a_into_b.c \
+				sorting_b_into_a.c \
+				sorting_and_moving.c \
 				parse_nbr.c \
+				sorting_small.c \
+				sorting_stacks_helper.c \
 				push_swap_comands.c \
 				push_swap_rev_rotate.c \
 				push_swap_comands_swap.c \
+				sort_algo.c 
+				
+				
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
+MY_OBJECTS_BONUS = $(MY_SOURCES_BONUS:.c=.o)
 
 # ---------- COLORS AND STUFF ---------- #
 Color_Off = \033[0m
@@ -75,10 +86,19 @@ $(NAME): $(MY_OBJECTS)
 		echo "$(Red)failed to compile $(NAME) $(Color_Off)"; \
 		exit 1; \
 	fi
-# cc   -Wall -Wextra -Werror ….o libft/libft.a -o push_swap
-#$(CC) -rcs $(NAME) $(MY_OBJECTS) 
-# ar -rcs $(NAME) $(MY_OBJECTS)
 
+$(NAME_Checker): $(MY_OBJECTS_BONUS)
+	@echo "$(BIYellow) Compiling $(NAME_Checker) $(Color_Off)"
+	@$(CC) $(CFLAGS) $(MY_OBJECTS_BONUS) $(LIBFT) -o $(NAME_Checker)
+	@if [ -f $(NAME_Checker) ]; then \
+		echo "$(On_Yellow)------------------------------------------$(Color_Off)"; \
+		echo "$(BGreen)PROCESS COMPLETED SUCCESSFULLY!$(Color_Off)"; \
+		echo "$(On_Green)------------------------------------------$(Color_Off)"; \
+	else \
+		echo "$(Red)failed to compile $(NAME_Checker) $(Color_Off)"; \
+		exit 1; \
+	fi
+	
 $(LIBFT):
 	make -C libft
 
@@ -87,17 +107,17 @@ $(LIBFT):
 
 clean:
 	@echo "$(Yellow)-----Removing Object Files--------$(Color_Off)"
-	@rm -f $(MY_OBJECTS)
+	@rm -f $(MY_OBJECTS) $(MY_OBJECTS_BONUS)
 
 fclean: clean
 	@echo "$(On_Yellow)Removing Executables...$(Color_Off)"
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME_Checker)
 	make -C libft fclean
 
 re: fclean all
 
 f: fclean
 f: CFLAGS += -g -fsanitize=address
-f: $(NAME)
+f: $(NAME) $(NAME_Checker)
 
 .PHONY: re clean fclean all
