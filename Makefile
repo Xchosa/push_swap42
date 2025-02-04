@@ -6,14 +6,15 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/02/03 14:23:31 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/04 14:24:25 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 LIBFT	= libft/libft.a
-NAME = push_swap
+NAME 	= push_swap
+NAME_Checker = checker
 
 VPATH= 	src:src/list_push_swap:src/sort:src/push_commands
 
@@ -36,6 +37,19 @@ MY_SOURCES = \
 			push_swap_rev_rotate.c \
 			push_swap_comands_swap.c \
 			testprint.c
+MY_SOURCES_BONUS = \
+				checker.c \
+				lstadd_back_ps.c \
+				lstadd_front_ps.c \
+				lstclear_ps.c \
+				lstiter_ps.c \
+				lstlast_ps.c \
+				lstnew_ps.c \
+				lstsize_ps.c \
+				parse_nbr.c \
+				push_swap_comands.c \
+				push_swap_rev_rotate.c \
+				push_swap_comands_swap.c \
 
 MY_OBJECTS=$(MY_SOURCES:.c=.o)
 
