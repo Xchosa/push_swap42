@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/02/04 17:02:20 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/10 15:57:24 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ $(NAME): $(MY_OBJECTS)
 		exit 1; \
 	fi
 
-$(NAME_Checker): $(MY_OBJECTS_BONUS)
+bonus: $(MY_OBJECTS_BONUS)
 	@echo "$(BIYellow) Compiling $(NAME_Checker) $(Color_Off)"
 	@$(CC) $(CFLAGS) $(MY_OBJECTS_BONUS) $(LIBFT) -o $(NAME_Checker)
 	@if [ -f $(NAME_Checker) ]; then \

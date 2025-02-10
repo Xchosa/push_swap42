@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:29:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 16:59:40 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:42:18 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (EXIT_SUCCESS);
 	parse_result = start_parse(argc, argv, &a);
-	if (!parse_result)
+	if (parse_result)
 	{
 		if (a != NULL)
 			free_stack(&a);
-		ft_putstr_fd("Error\n", STDERR_FILENO);
+		ft_putstr_fd("Error \n", STDERR_FILENO);
 		return (EXIT_FAILURE);
 	}
-	chose_sorting(&a, &b);
+	// chose_sorting(&a, &b);
 	read_commands(&a, &b);
 	if (check_order(&a) == true)
 		ft_putstr_fd("OK\n", STDIN_FILENO);
