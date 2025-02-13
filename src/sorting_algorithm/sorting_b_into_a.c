@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:01:20 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 14:04:50 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 // find target node for every b node in stack a
 // target = closest BIGGER Num in stack a;

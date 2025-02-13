@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 13:48:51 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:04 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 // Numbers are all in argument one. 
 int	parse_data(char *data, t_stack **a)

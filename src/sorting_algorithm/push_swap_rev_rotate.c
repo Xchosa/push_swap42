@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:22:43 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 13:50:07 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:20 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 // rra (reverse rotate a): Shift down all elements of stack a by 1.
 void	ft_rotate_rra(t_stack **a)

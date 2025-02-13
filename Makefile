@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/02/11 16:40:07 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/13 09:52:20 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ LIBFT	= libft/libft.a
 NAME 	= push_swap
 NAME_Checker = checker
 
-VPATH= 	src:src/list_push_swap:src/sort:src/push_commands
-
+VPATH= src:src/list_push_swap:src/sorting_algorithm:src/push_commands:src/bonus/
 MY_SOURCES = \
 			lstadd_back_ps.c \
 			lstadd_front_ps.c \

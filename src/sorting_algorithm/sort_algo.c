@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:48:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 16:49:45 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:24 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 // if stack is bigger than 5 , sorting and push lowest Nr on top, than the next 
 // to top of b . Highest Nr on top of stack b. 

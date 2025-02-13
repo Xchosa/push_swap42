@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:29:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 09:23:41 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:41:55 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	main(int argc, char **argv)
 {

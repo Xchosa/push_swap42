@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:16:19 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 14:11:50 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:59 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 bool	check_order(t_stack **stack)
 {

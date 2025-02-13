@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:09 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 14:05:13 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 void	sort_2_descending(t_stack **b)
 {

@@ -6,11 +6,11 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 10:56:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 14:01:26 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:50:47 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 // choose function either to rotate or rev rotate or mixed
 void	chose_rotate_command(t_stack **a, t_stack **b, t_stack *cheap_a)
