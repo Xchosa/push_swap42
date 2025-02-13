@@ -6,7 +6,7 @@
 #    By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 10:50:48 by poverbec          #+#    #+#              #
-#    Updated: 2025/02/10 15:57:24 by poverbec         ###   ########.fr        #
+#    Updated: 2025/02/11 16:40:07 by poverbec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ MY_SOURCES = \
 
 MY_SOURCES_BONUS = \
 				checker.c \
+				bonus_commands_1.c \
+				bonus_commands_2.c \
+				bonus_commands.c \
 				lstadd_back_ps.c \
 				lstadd_front_ps.c \
 				lstclear_ps.c \

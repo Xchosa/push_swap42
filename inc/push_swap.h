@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/04 14:26:58 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/11 16:41:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,15 @@ void	ft_rotate_rrr(t_stack **a, t_stack **b);
 // checker
 void	read_commands(t_stack **a, t_stack **b);
 void	read_and_use_commands(char *command, t_stack **a, t_stack **b);
+void	ft_swap_sb_b(t_stack **b);
+void	ft_swap_sa_b(t_stack **a);
+void	ft_swap_ss_b(t_stack **a, t_stack **b);
+void	ft_push_pb_b(t_stack **b, t_stack **a);
+void	ft_push_pa_b(t_stack **a, t_stack **b);
+void	ft_rotate_ra_b(t_stack **a);
+void	ft_rotate_rb_b(t_stack **b);
+void	ft_rotate_rr_b(t_stack **a, t_stack **b);
+void	ft_rotate_rra_b(t_stack **a);
+void	ft_rotate_rrb_b(t_stack **b);
+void	ft_rotate_rrr_b(t_stack **a, t_stack **b);
 #endif
