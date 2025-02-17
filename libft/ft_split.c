@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 16:21:58 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/17 14:27:27 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:24:01 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ char	**ft_split(char const *s, char c)
 	substrings = (char **)malloc((nbr_strings + 1) *(sizeof(char *)));
 	if (!substrings)
 		return (NULL);
-	if (!str_split(substrings, s, c))
-	{
-		free_string(substrings);
-		return (NULL);
-	}
-	return (substrings);
+	return (str_split(substrings, s, c));
 }
 
 static size_t	count_sub_strings(char const *s, char c)
@@ -78,7 +73,7 @@ char	**str_split(char **substring, char const *s, char c)
 				len_substring++;
 			substring[a] = ft_substr(s, 0, len_substring);
 			if (!substring[a])
-				return (NULL);
+				return (free_string(substring), NULL);
 			a++;
 			s += len_substring;
 		}

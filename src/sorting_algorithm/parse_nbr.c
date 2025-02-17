@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:02:38 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 09:50:04 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:13:01 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	parse_data(char *data, t_stack **a)
 	split_nbr = ft_split(data, ' ');
 	while (split_nbr[i] != NULL)
 	{
-		nbr = ft_atol(split_nbr[i]);
+		nbr = ft_atol(split_nbr[i++]);
 		if (nbr == LONG_MIN || nbr < INT_MIN || nbr > INT_MAX)
-			return (EXIT_FAILURE);
+			return (free_string(split_nbr),EXIT_FAILURE);
 		stack_lst = lstnew_ps(nbr);
 		if (!stack_lst)
 			return (EXIT_FAILURE);
@@ -34,12 +34,11 @@ int	parse_data(char *data, t_stack **a)
 			*a = stack_lst;
 		else
 			lstadd_back_ps(a, stack_lst);
-		i++;
 	}
-	if (check_duplicates(a) == 1)
-		return (EXIT_FAILURE);
+	if (split_nbr != NULL && split_nbr[0] != NULL && check_duplicates(a) == 0)
+		return (free_string(split_nbr) ,EXIT_SUCCESS);
 	else
-		return (EXIT_SUCCESS);
+		return (free_string(split_nbr), EXIT_FAILURE);
 }
 
 // mulitple Arguments 

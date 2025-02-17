@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:44:40 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/11 16:41:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 15:32:52 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int		start_parse(int argc, char **argv, t_stack**a);
 int		parse_input(char **data, t_stack **a);
 int		parse_data_multiple_arg(char **argv, t_stack **a );
 int		check_duplicates(t_stack **stack);
+void	free_string(char **str);
+
 // fill_stack
 void	give_index_and_median(t_stack **stack);
 void	print_content(t_stack *data);
