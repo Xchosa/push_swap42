@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:20:34 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/23 15:55:22 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:58:55 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,4 @@ void	lstadd_back_ps(t_stack **lst, t_stack *new)
 		last_node = lstlast_ps(*lst);
 		last_node->next = new;
 	}
-	// new->next = *lst;
-	// return;
 }

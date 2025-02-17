@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstnew_doubly.c                                    :+:      :+:    :+:   */
+/*   lstnew_ps.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:41:12 by poverbec          #+#    #+#             */
-/*   Updated: 2025/01/09 14:36:33 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/13 10:00:44 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,5 @@ t_stack	*lstnew_ps(int content)
 		return (NULL);
 	node -> data = content;
 	node -> next = NULL;
-	
 	return (node);
 }
-
-// content erwartet einen void pointer 
