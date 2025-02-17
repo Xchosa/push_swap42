@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:39:51 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 10:00:20 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:43:15 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,3 @@ t_stack	*lstlast_ps(t_stack *lst)
 	}
 	return (tmp);
 }
-
-
-// void	ft_lstadd_backdb(t_stack **lst, t_stack *new)
-// {
-// 	t_stack	*last_node;
-
-// 	if (new == NULL)
-// 		return ;
-// 	if (*lst == NULL)
-// 	{
-// 		*lst = new;
-// 		new->next = new;
-// 		new->prev = new;
-// 		return ;
-// 	}
-// 	else
-// 	{
-// 		last_node = ft_lstlastdb(*lst);
-// 		last_node->next = new;
-// 		new->prev = last_node;
-// 		new->next = *lst;
-// 		(*lst)->prev = new;
-// 	}
-// }

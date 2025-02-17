@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:41:12 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 10:00:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:43:00 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,6 @@ The member variable ’content’ is initialized with
 the value of the parameter 
 ’content’. The variable ’next’ is initialized to NULL.
 */
-
-// t_stack	*lstnew_doubly(int nbr)
-// {
-// 	t_stack	*node;
-
-// 	node = malloc (sizeof(t_stack));
-// 	if (!node)
-// 		return (NULL);
-// 	node->nbr = nbr;
-// 	node->content = NULL;
-// 	node->next = NULL;
-// 	node->prev = NULL;
-// 	return (node);
-// }
-
 t_stack	*lstnew_ps(int content)
 {
 	t_stack	*node;

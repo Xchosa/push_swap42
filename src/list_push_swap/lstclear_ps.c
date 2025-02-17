@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 15:19:13 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 09:58:48 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:43:59 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ Finally, the pointer to the list must be set to NULL.
 lst: The address of a pointer to a node.
 del: The address of the function used to delete the content of the node.
 */
-
-// void	lstclear_ps(t_stack **lst);
 void	lstclear_ps(t_stack **lst, void (*del)(void *))
 {
 	t_stack	*tmp;

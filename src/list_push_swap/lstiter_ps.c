@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 17:30:42 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 10:00:12 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:42:16 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	lstiter_ps(t_stack *lst, void (*f)(t_stack *))
 	}
 	return ;
 }
-
