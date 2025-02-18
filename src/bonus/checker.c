@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:29:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/02/13 09:41:55 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:52:29 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,18 @@ void	read_and_use_commands(char *command, t_stack **a, t_stack **b)
 		ft_rotate_rr_b(a, b);
 	else
 		exit(ft_printf("Error\n", STDERR_FILENO));
+}
+void	free_string(char **str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return ;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

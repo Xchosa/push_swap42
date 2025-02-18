@@ -2,6 +2,8 @@
 **/*.out
 **/*main
 *.txt
+*.vscode
+*.DS.STORE
 checker_Mac
 pro_checker
 push_swap_test.sh
